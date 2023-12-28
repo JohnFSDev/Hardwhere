@@ -326,3 +326,4 @@ C:\Users\johnl\source\repos\api_Hardwhere\Hardwhere_API\obj\Debug\net6.0\refint\
 C:\Users\johnl\source\repos\api_Hardwhere\Hardwhere_API\obj\Debug\net6.0\Hardwhere_API.pdb
 C:\Users\johnl\source\repos\api_Hardwhere\Hardwhere_API\obj\Debug\net6.0\Hardwhere_API.genruntimeconfig.cache
 C:\Users\johnl\source\repos\api_Hardwhere\Hardwhere_API\obj\Debug\net6.0\ref\Hardwhere_API.dll
+C:\Users\johnl\source\repos\api-backend\Hardwhere_API\obj\Debug\net6.0\Hardwhere_API.sourcelink.json

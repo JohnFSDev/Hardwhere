@@ -17,10 +17,18 @@ namespace Hardwhere_API.Repositories
             _dbContext.SaveChanges();
         }
 
+
         public TGeneric GetComponentsById(int id) 
         {
             var component =  _dbContext.Set<TGeneric>().Find(id);
             return component;
         }
+
+        public IEnumerable<TGeneric> GetAllComponents()
+        {
+            var allcomponents = _dbContext.Set<TGeneric>().ToList();
+            return allcomponents;
+        }
+
     }
 }

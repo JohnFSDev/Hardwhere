@@ -21,19 +21,16 @@ namespace Hardwhere_API.Controllers
             
         }
 
+        [HttpGet]
 
-        [HttpPost]
-
-        public ActionResult Post(CreateComponentsDTO createDTO)
+        public ActionResult GetAllComponents()
         {
-            var component = _mapper.Map<Component>(createDTO);
-
-            _repository.Create(component);
-
-            return Ok();
-
+            var allcomponents = _repository.GetAllComponents();
+            var readAllComponentsDto = _mapper.Map<IEnumerable<ReadComponentsDTO>>(allcomponents);
+            return Ok(readAllComponentsDto);
         }
 
+        //Este post busca componentes por el ID.
         [HttpGet("{id}")] 
         public ActionResult Get(int id) 
         {
@@ -46,6 +43,19 @@ namespace Hardwhere_API.Controllers
 
         }
 
+
+        // Este post crear nuevos componentes
+        [HttpPost]
+
+        public ActionResult Post(CreateComponentsDTO createDTO)
+        {
+            var component = _mapper.Map<Component>(createDTO);
+
+            _repository.Create(component);
+  
+            return Ok();
+
+        }
 
     }
 

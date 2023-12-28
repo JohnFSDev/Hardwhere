@@ -4,5 +4,8 @@
     {
         void Create(TGeneric generic);
         TGeneric GetComponentsById(int id);
+
+        IEnumerable<TGeneric> GetAllComponents();
+
     }
 }
