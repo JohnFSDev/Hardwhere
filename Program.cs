@@ -15,8 +15,13 @@ builder.Services.AddAutoMapper(typeof(Program));
 
 //Builders de mis https request.
 builder.Services.AddScoped<IRepository<Component>,Repository<Component>>();
+builder.Services.AddScoped<IRepository<GraphicCard>, Repository<GraphicCard>>();
+builder.Services.AddScoped<IRepository<Processor>, Repository<Processor>>();
 builder.Services.AddScoped<IRepository<Ram>, Repository<Ram>>();
+builder.Services.AddScoped<IRepository<StorageMemory>, Repository<StorageMemory>>();
 builder.Services.AddScoped<IRepository<Supply>, Repository<Supply>>();
+
+
 
 
 builder.Services.AddEndpointsApiExplorer();
