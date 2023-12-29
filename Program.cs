@@ -13,11 +13,15 @@ builder.Services.AddAutoMapper(typeof(Program));
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+//Builders de mis https request.
 builder.Services.AddScoped<IRepository<Component>,Repository<Component>>();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddScoped<IRepository<Ram>, Repository<Ram>>();
+builder.Services.AddScoped<IRepository<Supply>, Repository<Supply>>();
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
 var connectionString = builder.Configuration.GetConnectionString("Hardwhere");
 builder.Services.AddDbContext<HardwhereDbContext>(option => option.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 var app = builder.Build();

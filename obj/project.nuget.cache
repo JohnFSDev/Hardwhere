@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UcD/cgcGE0dA0irYkWqNC9lPzpGg+hRI6DBHcve01fyL9vFwXfqgqv0sujlVF0AZWeA6uVKbHOr9NKQUhMyUxw==",
+  "dgSpecHash": "CmzmeNm0D/6O6lpJUtQIyXbcUad14Oq/6aavLKm1uygMXHRArgytk3SMTdMjWCmVDhXqUixEOpE+GlleRJ/HeQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\johnl\\source\\repos\\api-backend\\Hardwhere_API\\Hardwhere_API.csproj",
+  "projectFilePath": "C:\\Users\\johnl\\source\\repos\\api-Backend\\Hardwhere_API\\Hardwhere_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\johnl\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\johnl\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

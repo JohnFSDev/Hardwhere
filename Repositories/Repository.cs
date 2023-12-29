@@ -1,6 +1,7 @@
 ﻿using Hardwhere_API.Context;
 using Hardwhere_API.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace Hardwhere_API.Repositories
 {
@@ -30,5 +31,16 @@ namespace Hardwhere_API.Repositories
             return allcomponents;
         }
 
+        public IEnumerable<TGeneric> GetAllComponentsIncluding<TGeneric>(params Expression<Func<TGeneric, object>>[] includeComponents) where TGeneric : class
+        {
+            IQueryable<TGeneric> query = _dbContext.Set<TGeneric>();
+
+            foreach (var item in includeComponents)
+            {
+                query = query.Include(item);
+            }
+
+            return query.ToList();
+        }
     }
 }

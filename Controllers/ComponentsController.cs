@@ -43,6 +43,15 @@ namespace Hardwhere_API.Controllers
 
         }
 
+        //[HttpGet("rams")]
+
+        //public ActionResult GetAllRams()
+        //{
+        //    var allrams = _repository.GetAllRams();
+        //    var readAllRamsDto = _mapper.Map<IEnumerable<ReadComponentsDTO>>(allrams);
+        //    return Ok(readAllRamsDto);
+
+        //}
 
         // Este post crear nuevos componentes
         [HttpPost]
@@ -52,10 +61,14 @@ namespace Hardwhere_API.Controllers
             var component = _mapper.Map<Component>(createDTO);
 
             _repository.Create(component);
-  
+
             return Ok();
 
         }
+
+      
+
+
 
     }
 
