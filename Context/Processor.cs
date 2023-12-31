@@ -5,7 +5,7 @@ namespace Hardwhere_API.Context;
 
 public partial class Processor
 {
-    public int IdProcessor { get; set; }
+    public int Id { get; set; }
 
     public string Cpu { get; set; } = null!;
 

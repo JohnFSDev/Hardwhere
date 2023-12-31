@@ -5,7 +5,7 @@ namespace Hardwhere_API.Context;
 
 public partial class Ram
 {
-    public int IdRam { get; set; }
+    public int Id { get; set; }
 
     public string RamSize { get; set; } = null!;
 

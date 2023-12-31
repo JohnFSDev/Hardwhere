@@ -5,7 +5,7 @@ namespace Hardwhere_API.Context;
 
 public partial class Supply
 {
-    public int IdSupply { get; set; }
+    public int Id { get; set; }
 
     public string ConnectorType { get; set; } = null!;
 

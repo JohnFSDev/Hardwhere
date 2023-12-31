@@ -5,7 +5,7 @@ namespace Hardwhere_API.Context;
 
 public partial class Component
 {
-    public int IdComponents { get; set; }
+    public int Id { get; set; }
 
     public string Title { get; set; } = null!;
 
@@ -16,6 +16,8 @@ public partial class Component
     public string Model { get; set; } = null!;
 
     public int Consults { get; set; }
+
+    public string Type { get; set; } = null!;
 
     public virtual GraphicCard? GraphicCard { get; set; }
 

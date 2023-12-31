@@ -4,6 +4,7 @@ using Hardwhere_API.Interfaces;
 using Hardwhere_API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace Hardwhere_API.Controllers
 {
@@ -22,10 +23,9 @@ namespace Hardwhere_API.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            var allcomponents = _repository.GetAllComponents();
-            var ramsComponents = _repository.GetAllComponentsIncluding<Ram>(x => x.IdComponentsNavigation);
+            var ramsComponents = await _repository.GetAllComponentsIncluding<Ram>(x => x.IdComponentsNavigation);
             List<ReadSearchDTO> listRamDTO = new();
             foreach (var listRams in ramsComponents)
             {
@@ -34,8 +34,9 @@ namespace Hardwhere_API.Controllers
 
                     Title = listRams.IdComponentsNavigation.Title,
                     Description = listRams.IdComponentsNavigation.Description,
-                    Id = listRams.IdRam,
+                    Id = listRams.IdComponentsNavigation.Id,
                     UrlImg = listRams.UrlImg,
+                    Type = listRams.IdComponentsNavigation.Type
 
                 };
 

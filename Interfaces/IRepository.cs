@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using Hardwhere_API.Models;
+using System.Linq.Expressions;
 
 namespace Hardwhere_API.Interfaces
 {
@@ -9,7 +10,9 @@ namespace Hardwhere_API.Interfaces
         void Create(TGeneric generic);
 
         //Toma una expresion que es una funcion que recibe un metodo generico y devuelve un array de objetos.
-        IEnumerable<TGeneric> GetAllComponentsIncluding<TGeneric>(params Expression<Func<TGeneric, object>>[] includeComponents) where TGeneric : class;
+        Task<IEnumerable<TGeneric>> GetAllComponentsIncluding<TGeneric>(params Expression<Func<TGeneric, object>>[] includeComponents) where TGeneric : class;
+
+        IEnumerable<TGeneric> FilterComponents(IEnumerable<TGeneric> generics, List<Func<TGeneric, bool>> componentsFilter);
 
     }
 }

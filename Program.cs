@@ -1,6 +1,7 @@
 using Hardwhere_API.Context;
 using Hardwhere_API.Interfaces;
 using Hardwhere_API.Repositories;
+using Hardwhere_API.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +21,7 @@ builder.Services.AddScoped<IRepository<Processor>, Repository<Processor>>();
 builder.Services.AddScoped<IRepository<Ram>, Repository<Ram>>();
 builder.Services.AddScoped<IRepository<StorageMemory>, Repository<StorageMemory>>();
 builder.Services.AddScoped<IRepository<Supply>, Repository<Supply>>();
+builder.Services.AddScoped<SearchService>();
 
 
 

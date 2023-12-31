@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CmzmeNm0D/6O6lpJUtQIyXbcUad14Oq/6aavLKm1uygMXHRArgytk3SMTdMjWCmVDhXqUixEOpE+GlleRJ/HeQ==",
+  "dgSpecHash": "/Gw5VY3k8jWAuZRqcR/TODRWp5fx6VFxL2CjTEN0Ceqg1RxnwNh2SeokJQlFobmoydSJueCLXBPBs8b+jENVYQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\johnl\\source\\repos\\api-Backend\\Hardwhere_API\\Hardwhere_API.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,7 @@
     "C:\\Users\\johnl\\.nuget\\packages\\mysql.data\\8.2.0\\mysql.data.8.2.0.nupkg.sha512",
     "C:\\Users\\johnl\\.nuget\\packages\\mysql.entityframeworkcore\\7.0.5\\mysql.entityframeworkcore.7.0.5.nupkg.sha512",
     "C:\\Users\\johnl\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512",
+    "C:\\Users\\johnl\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\johnl\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\7.0.0\\pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
     "C:\\Users\\johnl\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\johnl\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",

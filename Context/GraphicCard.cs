@@ -5,7 +5,7 @@ namespace Hardwhere_API.Context;
 
 public partial class GraphicCard
 {
-    public int IdGraphic { get; set; }
+    public int Id { get; set; }
 
     public string Coprocessor { get; set; } = null!;
 

@@ -22,10 +22,10 @@ namespace Hardwhere_API.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
 
-            var components = _repository.GetAllComponentsIncluding<Processor>(x => x.IdComponentsNavigation);
+            var components = await _repository.GetAllComponentsIncluding<Processor>(x => x.IdComponentsNavigation);
             List<ReadSearchDTO> listDTO = new();
             foreach (var list in components)
             {
@@ -34,8 +34,9 @@ namespace Hardwhere_API.Controllers
 
                     Title = list.IdComponentsNavigation.Title,
                     Description = list.IdComponentsNavigation.Description,
-                    Id = list.IdProcessor,
+                    Id = list.IdComponentsNavigation.Id,
                     UrlImg = list.UrlImg,
+                    Type = list.IdComponentsNavigation.Type
 
                 };
 

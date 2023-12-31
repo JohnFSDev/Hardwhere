@@ -1,5 +1,6 @@
 ﻿using Hardwhere_API.Context;
 using Hardwhere_API.Interfaces;
+using Hardwhere_API.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -19,9 +20,9 @@ namespace Hardwhere_API.Repositories
         }
 
 
-        public TGeneric GetComponentsById(int id) 
+        public TGeneric GetComponentsById(int id)
         {
-            var component =  _dbContext.Set<TGeneric>().Find(id);
+            var component = _dbContext.Set<TGeneric>().Find(id);
             return component;
         }
 
@@ -31,7 +32,7 @@ namespace Hardwhere_API.Repositories
             return allcomponents;
         }
 
-        public IEnumerable<TGeneric> GetAllComponentsIncluding<TGeneric>(params Expression<Func<TGeneric, object>>[] includeComponents) where TGeneric : class
+        public async Task<IEnumerable<TGeneric>> GetAllComponentsIncluding<TGeneric>(params Expression<Func<TGeneric, object>>[] includeComponents) where TGeneric : class
         {
             IQueryable<TGeneric> query = _dbContext.Set<TGeneric>();
 
@@ -40,7 +41,24 @@ namespace Hardwhere_API.Repositories
                 query = query.Include(item);
             }
 
-            return query.ToList();
+            return await query.ToListAsync();
+        }
+
+        public IEnumerable<TGeneric> FilterComponents(IEnumerable<TGeneric> generics, List<Func<TGeneric, bool>> componentsFilter)
+        {
+            if (componentsFilter == null || !componentsFilter.Any())
+            {
+                return generics.ToList();
+            }
+
+            var filteredComponents = generics;
+
+            foreach (var component in componentsFilter)
+            {
+                filteredComponents = filteredComponents.Where(component).ToList();
+            }
+
+            return filteredComponents;
         }
     }
 }

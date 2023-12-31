@@ -8,7 +8,6 @@ public partial class HardwhereDbContext : DbContext
 {
     public HardwhereDbContext()
     {
-
     }
 
     public HardwhereDbContext(DbContextOptions<HardwhereDbContext> options)
@@ -27,15 +26,16 @@ public partial class HardwhereDbContext : DbContext
     public virtual DbSet<StorageMemory> StorageMemories { get; set; }
 
     public virtual DbSet<Supply> Supplies { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Component>(entity =>
         {
-            entity.HasKey(e => e.IdComponents).HasName("PRIMARY");
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
 
             entity.ToTable("components");
 
-            entity.Property(e => e.IdComponents).HasColumnName("id_components");
+            entity.Property(e => e.Id).HasColumnName("id_components");
             entity.Property(e => e.Brand)
                 .HasMaxLength(50)
                 .HasColumnName("brand");
@@ -49,17 +49,20 @@ public partial class HardwhereDbContext : DbContext
             entity.Property(e => e.Title)
                 .HasMaxLength(50)
                 .HasColumnName("title");
+            entity.Property(e => e.Type)
+                .HasMaxLength(50)
+                .HasColumnName("type");
         });
 
         modelBuilder.Entity<GraphicCard>(entity =>
         {
-            entity.HasKey(e => e.IdGraphic).HasName("PRIMARY");
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
 
             entity.ToTable("graphic_card");
 
             entity.HasIndex(e => e.IdComponents, "id_components").IsUnique();
 
-            entity.Property(e => e.IdGraphic).HasColumnName("id_graphic");
+            entity.Property(e => e.Id).HasColumnName("id_graphic");
             entity.Property(e => e.Coprocessor)
                 .HasMaxLength(50)
                 .HasColumnName("coprocessor");
@@ -79,13 +82,13 @@ public partial class HardwhereDbContext : DbContext
 
         modelBuilder.Entity<Processor>(entity =>
         {
-            entity.HasKey(e => e.IdProcessor).HasName("PRIMARY");
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
 
             entity.ToTable("processors");
 
             entity.HasIndex(e => e.IdComponents, "id_components").IsUnique();
 
-            entity.Property(e => e.IdProcessor).HasColumnName("id_processor");
+            entity.Property(e => e.Id).HasColumnName("id_processor");
             entity.Property(e => e.Cpu)
                 .HasMaxLength(50)
                 .HasColumnName("CPU");
@@ -108,13 +111,13 @@ public partial class HardwhereDbContext : DbContext
 
         modelBuilder.Entity<Ram>(entity =>
         {
-            entity.HasKey(e => e.IdRam).HasName("PRIMARY");
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
 
             entity.ToTable("ram");
 
             entity.HasIndex(e => e.IdComponents, "id_components").IsUnique();
 
-            entity.Property(e => e.IdRam).HasColumnName("id_ram");
+            entity.Property(e => e.Id).HasColumnName("id_ram");
             entity.Property(e => e.IdComponents).HasColumnName("id_components");
             entity.Property(e => e.RamSize)
                 .HasMaxLength(50)
@@ -137,13 +140,13 @@ public partial class HardwhereDbContext : DbContext
 
         modelBuilder.Entity<StorageMemory>(entity =>
         {
-            entity.HasKey(e => e.IdSmemory).HasName("PRIMARY");
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
 
             entity.ToTable("storage_memory");
 
             entity.HasIndex(e => e.IdComponents, "id_components").IsUnique();
 
-            entity.Property(e => e.IdSmemory).HasColumnName("id_smemory");
+            entity.Property(e => e.Id).HasColumnName("id_smemory");
             entity.Property(e => e.ConnectivityTech)
                 .HasMaxLength(50)
                 .HasColumnName("connectivity_tech");
@@ -163,13 +166,13 @@ public partial class HardwhereDbContext : DbContext
 
         modelBuilder.Entity<Supply>(entity =>
         {
-            entity.HasKey(e => e.IdSupply).HasName("PRIMARY");
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
 
             entity.ToTable("supply");
 
             entity.HasIndex(e => e.IdComponents, "id_components").IsUnique();
 
-            entity.Property(e => e.IdSupply).HasColumnName("id_supply");
+            entity.Property(e => e.Id).HasColumnName("id_supply");
             entity.Property(e => e.ConnectorType)
                 .HasMaxLength(50)
                 .HasColumnName("connector_type");

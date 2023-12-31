@@ -5,7 +5,7 @@ namespace Hardwhere_API.Context;
 
 public partial class StorageMemory
 {
-    public int IdSmemory { get; set; }
+    public int Id { get; set; }
 
     public string Storage { get; set; } = null!;
 
