@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\johnl\\source\\repos\\api-Backend\\Hardwhere_API\\Hardwhere_API.csproj": {}
+    "C:\\Users\\johnl\\source\\repos\\api-backend\\Hardwhere_API\\Hardwhere_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\johnl\\source\\repos\\api-Backend\\Hardwhere_API\\Hardwhere_API.csproj": {
+    "C:\\Users\\johnl\\source\\repos\\api-backend\\Hardwhere_API\\Hardwhere_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\johnl\\source\\repos\\api-Backend\\Hardwhere_API\\Hardwhere_API.csproj",
+        "projectUniqueName": "C:\\Users\\johnl\\source\\repos\\api-backend\\Hardwhere_API\\Hardwhere_API.csproj",
         "projectName": "Hardwhere_API",
-        "projectPath": "C:\\Users\\johnl\\source\\repos\\api-Backend\\Hardwhere_API\\Hardwhere_API.csproj",
+        "projectPath": "C:\\Users\\johnl\\source\\repos\\api-backend\\Hardwhere_API\\Hardwhere_API.csproj",
         "packagesPath": "C:\\Users\\johnl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\johnl\\source\\repos\\api-Backend\\Hardwhere_API\\obj\\",
+        "outputPath": "C:\\Users\\johnl\\source\\repos\\api-backend\\Hardwhere_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\johnl\\AppData\\Roaming\\NuGet\\NuGet.Config",

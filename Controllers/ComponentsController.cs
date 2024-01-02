@@ -3,6 +3,7 @@ using Hardwhere_API.Context;
 using Hardwhere_API.Interfaces;
 using Hardwhere_API.Mapper;
 using Hardwhere_API.Models;
+using Hardwhere_API.Repositories;
 using Hardwhere_API.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -43,14 +44,66 @@ namespace Hardwhere_API.Controllers
 
         //Este post busca componentes por el ID.
         [HttpGet("{id}")]
-        public ActionResult Get(int id)
+        public IActionResult Get(int id)
         {
 
             var component = _componentRepository.GetComponentsById(id);
+            //Aumenta las consultas
+            component.Consults += 1;
+            //Actualiza la base de datos con las consultas
+            _componentRepository.Update(component);
 
-            var readComponentDto = _mapper.Map<ReadComponentsDTO>(component);
+            switch (component.Type)
+            {
+                case "graphic":
 
-            return Ok(readComponentDto);
+                    
+                    var graphics = _componentRepository.GetComponentsByIdIncluding<Component>(e => e.Id == id, g => g.GraphicCard);
+
+                    GraphicDTO graphicsDTO = new(graphics.Title, graphics.Description, graphics.GraphicCard.Coprocessor, graphics.GraphicCard.VramSize, graphics.GraphicCard.UrlImg);
+
+                    return Ok(graphicsDTO);
+
+                ////graphicsDTO.Assign(graphics.Title, graphics.Description, graphics.GraphicCard.Coprocessor, graphics.GraphicCard.VramSize, graphics.GraphicCard.UrlImg);
+
+                case "processor":
+
+                    var processor = _componentRepository.GetComponentsByIdIncluding<Component>(e => e.Id == id, g => g.Processor);
+
+                    ProcessorDTO processorDTO = new(processor.Title, processor.Description, processor.Processor.Cpu,processor.Processor.Model,processor.Processor.Speed, processor.Processor.UrlImg);
+
+
+                    return Ok(processorDTO);
+
+                case "ram":
+
+                    var ram = _componentRepository.GetComponentsByIdIncluding<Component>(e => e.Id == id, g => g.Ram);
+
+                    RamDTO ramDTO = new(ram.Title, ram.Description, ram.Ram.RamSize, ram.Ram.RamTech, ram.Ram.RamSpeed, ram.Ram.UrlImg);
+
+
+                    return Ok(ramDTO);
+
+                case "storage":
+
+                    var storage = _componentRepository.GetComponentsByIdIncluding<Component>(e => e.Id == id, g => g.StorageMemory);
+
+                    StorageMemoryDTO storageDTO = new(storage.Title, storage.Description,storage.StorageMemory.Storage,storage.StorageMemory.ConnectivityTech, storage.StorageMemory.UrlImg);
+
+
+                    return Ok(storageDTO);
+
+                case "supply":
+
+                    var supply = _componentRepository.GetComponentsByIdIncluding<Component>(e => e.Id == id, g => g.Supply);
+
+                    SupplyDTO supplyDTO = new(supply.Title, supply.Description, supply.Supply.ConnectorType, supply.Supply.Wattage,supply.Supply.MinimumInput,supply.Supply.UrlImg);
+
+
+                    return Ok(supplyDTO);
+            }
+
+            return Ok(component);
 
         }
 

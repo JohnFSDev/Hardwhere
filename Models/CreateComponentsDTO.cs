@@ -9,6 +9,8 @@
 
         public string Model { get; set; } = null!;
 
+        public string Type { get; set; } = null!;   
+
         public int Consults { get; private set; } = 0;
 
     }

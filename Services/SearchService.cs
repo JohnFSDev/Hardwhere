@@ -3,7 +3,9 @@ using Hardwhere_API.Context;
 using Hardwhere_API.Interfaces;
 using Hardwhere_API.Models;
 using Hardwhere_API.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using System.Linq.Expressions;
 
 namespace Hardwhere_API.Services
 {
@@ -154,9 +156,10 @@ namespace Hardwhere_API.Services
 
         public List<ReadSearchDTO> SearchFilter(List<ReadSearchDTO> generics, string searchText)
         {
-            generics = generics.Where(e => e.Title.ToLower().Contains(searchText) || e.Description.ToLower().Contains(searchText)).ToList();
+            generics = generics.Where(e => e.Title.ToLower().Contains(searchText.ToLower()) || e.Description.ToLower().Contains(searchText.ToLower())).ToList();
             return generics;
         }
+
         public async Task<List<ReadSearchDTO>> CreateListDTO(string searchText)
         {
             var graphicDTO = await ConvertGraphicToDTO();

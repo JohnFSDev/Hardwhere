@@ -45,5 +45,6 @@ namespace Hardwhere_API.Controllers
 
             return Ok(listDTO);
         }
+
     }
 }

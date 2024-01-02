@@ -10,12 +10,16 @@ namespace Hardwhere_API.Mapper
         {
 
             CreateMap<Component, ReadComponentsDTO>();
-            CreateMap<CreateComponentsDTO, Component>();
+            CreateMap<Component, CreateComponentsDTO>();
             CreateMap<GraphicCard, ReadSearchDTO>();
             CreateMap<Processor, ReadSearchDTO>();
             CreateMap<Ram, ReadSearchDTO>();
             CreateMap<StorageMemory, ReadSearchDTO>();
             CreateMap<Supply, ReadSearchDTO>();
+            CreateMap<Component, GraphicDTO>();
+            CreateMap<Component, RamDTO>();
+            CreateMap<CreateComponentsDTO, Component>();
+
         }
     }
 }
