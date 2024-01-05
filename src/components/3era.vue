@@ -59,10 +59,7 @@
                           Descripcion Componente
                         </v-card-text>
                       </v-card>
-            
-
-      <v-footer><a href="#">Inicio de la pagina</a></v-footer>
-
+          
 </template>
 
 <script>

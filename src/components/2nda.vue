@@ -53,7 +53,12 @@
             </v-card-text>
           </v-card>
 
-  <v-footer><a href="#">Inicio de la pagina</a></v-footer>
+          <template>
+            <v-footer style="background-color: #023047;">
+<a> Inicio de la pagina </a>            </v-footer>
+          </template>
+          
+
 </template>
 
 <script>
