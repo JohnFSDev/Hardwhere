@@ -24,6 +24,36 @@
     <a href="#">Que es Hardwhere</a>
     </v-app-bar>
   </v-toolbar>
+
+  <v-card>
+\    <v-img src="/ruta/de/tu/imagen.jpg" aspect-ratio="2.75"></v-img>
+    <v-card-title>Nombre Componente</v-card-title>
+    <v-card-text>
+      Descripcion Componente
+    </v-card-text>
+  </v-card>
+
+  <v-divider></v-divider>
+
+  <v-card>
+    \    <v-img src="/ruta/de/tu/imagen.jpg" aspect-ratio="2.75"></v-img>
+        <v-card-title>Nombre Componente</v-card-title>
+        <v-card-text>
+          Descripcion Componente
+        </v-card-text>
+      </v-card>
+
+      <v-divider></v-divider>
+
+      <v-card>
+        \    <v-img src="/ruta/de/tu/imagen.jpg" aspect-ratio="2.75"></v-img>
+            <v-card-title>Nombre Componente</v-card-title>
+            <v-card-text>
+              Descripcion Componente
+            </v-card-text>
+          </v-card>
+
+  <v-footer><a href="#">Inicio de la pagina</a></v-footer>
 </template>
 
 <script>
