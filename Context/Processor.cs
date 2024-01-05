@@ -9,8 +9,6 @@ public partial class Processor
 
     public string Cpu { get; set; } = null!;
 
-    public string Model { get; set; } = null!;
-
     public string Speed { get; set; } = null!;
 
     public string UrlImg { get; set; } = null!;

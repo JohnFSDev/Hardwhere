@@ -36,6 +36,7 @@ namespace Hardwhere_API.Repositories
         public IEnumerable<TGeneric> GetAllComponents()
         {
             var allcomponents = _dbContext.Set<TGeneric>().ToList();
+            
             return allcomponents;
         }
 

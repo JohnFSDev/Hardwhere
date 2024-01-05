@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hardwhere_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67e864f2c80a0c13708a23f50fbd8768d1c1a136")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13e8f69fb86356721cdb3194e34beb37bc1b9a80")]
 [assembly: System.Reflection.AssemblyProductAttribute("Hardwhere_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hardwhere_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

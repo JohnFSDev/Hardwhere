@@ -20,6 +20,7 @@ namespace Hardwhere_API.Mapper
             CreateMap<Component, RamDTO>();
             CreateMap<CreateComponentsDTO, Component>();
 
+
         }
     }
 }

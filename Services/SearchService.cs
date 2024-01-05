@@ -178,9 +178,25 @@ namespace Hardwhere_API.Services
 
             var filteredList = SearchFilter(listDTO, searchText);
 
-
             return filteredList;
         }
+
+        public async Task<List<ReadSearchDTO>> PaginateList(List<ReadSearchDTO> filteredList, int page, float pageResults)
+        {
+
+            if(page == 0)
+            {
+                return filteredList;
+            }
+
+            var filteredListPaginate = filteredList
+                .Skip((page - 1) * (int)pageResults)
+                .Take((int)pageResults).ToList();
+
+
+            return filteredListPaginate;
+        }
+
 
     }
 }

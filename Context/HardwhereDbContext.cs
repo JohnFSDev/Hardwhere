@@ -27,6 +27,7 @@ public partial class HardwhereDbContext : DbContext
 
     public virtual DbSet<Supply> Supplies { get; set; }
 
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Component>(entity =>
@@ -62,7 +63,7 @@ public partial class HardwhereDbContext : DbContext
 
             entity.HasIndex(e => e.IdComponents, "id_components").IsUnique();
 
-            entity.Property(e => e.Id).HasColumnName("id_graphic");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Coprocessor)
                 .HasMaxLength(50)
                 .HasColumnName("coprocessor");
@@ -88,14 +89,11 @@ public partial class HardwhereDbContext : DbContext
 
             entity.HasIndex(e => e.IdComponents, "id_components").IsUnique();
 
-            entity.Property(e => e.Id).HasColumnName("id_processor");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Cpu)
                 .HasMaxLength(50)
                 .HasColumnName("CPU");
             entity.Property(e => e.IdComponents).HasColumnName("id_components");
-            entity.Property(e => e.Model)
-                .HasMaxLength(50)
-                .HasColumnName("model");
             entity.Property(e => e.Speed)
                 .HasMaxLength(50)
                 .HasColumnName("speed");
@@ -117,7 +115,7 @@ public partial class HardwhereDbContext : DbContext
 
             entity.HasIndex(e => e.IdComponents, "id_components").IsUnique();
 
-            entity.Property(e => e.Id).HasColumnName("id_ram");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.IdComponents).HasColumnName("id_components");
             entity.Property(e => e.RamSize)
                 .HasMaxLength(50)
@@ -146,7 +144,7 @@ public partial class HardwhereDbContext : DbContext
 
             entity.HasIndex(e => e.IdComponents, "id_components").IsUnique();
 
-            entity.Property(e => e.Id).HasColumnName("id_smemory");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.ConnectivityTech)
                 .HasMaxLength(50)
                 .HasColumnName("connectivity_tech");
@@ -172,7 +170,7 @@ public partial class HardwhereDbContext : DbContext
 
             entity.HasIndex(e => e.IdComponents, "id_components").IsUnique();
 
-            entity.Property(e => e.Id).HasColumnName("id_supply");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.ConnectorType)
                 .HasMaxLength(50)
                 .HasColumnName("connector_type");

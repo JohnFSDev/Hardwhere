@@ -7,7 +7,9 @@ using Hardwhere_API.Repositories;
 using Hardwhere_API.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 namespace Hardwhere_API.Controllers
 {
     [Route("api/[controller]")]
@@ -25,22 +27,24 @@ namespace Hardwhere_API.Controllers
             _searchService = searchService;
         }
 
-        [HttpGet]
+        [HttpGet("Consults")]
 
-        public ActionResult GetAllComponents()
+        public ActionResult MostSearched()
         {
-            var allcomponents = _componentRepository.GetAllComponents();
+            var allcomponents = _componentRepository.GetAllComponents().OrderByDescending(x => x.Consults);
+            
             var readAllComponentsDto = _mapper.Map<IEnumerable<ReadComponentsDTO>>(allcomponents);
             return Ok(readAllComponentsDto);
         }
-
         [HttpGet("Search")]
 
-        public async Task<ActionResult> GetUserSearch(string searchText)
+        public async Task<ActionResult> GetUserSearch(string searchText,  float pageResults, int page = 0)
         {
-            var allcomponents = await _searchService.CreateListDTO(searchText);
-            return Ok(allcomponents);
+            var filterComponents = await _searchService.CreateListDTO(searchText);
+            var componentsPaginate = await _searchService.PaginateList(filterComponents, page, pageResults);
+            return Ok(componentsPaginate);
         }
+
 
         //Este post busca componentes por el ID.
         [HttpGet("{id}")]
@@ -48,6 +52,7 @@ namespace Hardwhere_API.Controllers
         {
 
             var component = _componentRepository.GetComponentsById(id);
+            
             //Aumenta las consultas
             component.Consults += 1;
             //Actualiza la base de datos con las consultas
@@ -70,7 +75,7 @@ namespace Hardwhere_API.Controllers
 
                     var processor = _componentRepository.GetComponentsByIdIncluding<Component>(e => e.Id == id, g => g.Processor);
 
-                    ProcessorDTO processorDTO = new(processor.Title, processor.Description, processor.Processor.Cpu,processor.Processor.Model,processor.Processor.Speed, processor.Processor.UrlImg);
+                    ProcessorDTO processorDTO = new(processor.Title, processor.Description, processor.Processor.Cpu,processor.Processor.Speed, processor.Processor.UrlImg);
 
 
                     return Ok(processorDTO);
@@ -108,17 +113,17 @@ namespace Hardwhere_API.Controllers
         }
 
 
-        [HttpPost]
+        //[HttpPost]
 
-        public ActionResult Post(CreateComponentsDTO createDTO)
-        {
-            var component = _mapper.Map<Component>(createDTO);
+        //public ActionResult Post(CreateComponentsDTO createDTO)
+        //{
+        //    var component = _mapper.Map<Component>(createDTO);
 
-            _componentRepository.Create(component);
+        //    _componentRepository.Create(component);
 
-            return Ok();
+        //    return Ok();
 
-        }
+        //}
 
 
     }
