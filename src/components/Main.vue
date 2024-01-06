@@ -21,7 +21,7 @@
           ></v-text-field>
         </v-card-text>
       </v-card>
-      <a color="#023047">Qué es Hardwhere?</a>
+      <a style="color: #023047; margin: 0 20px;">Qué es Hardwhere?</a>
     </v-app-bar>
   </v-toolbar>
 
