@@ -21,7 +21,7 @@
           ></v-text-field>
         </v-card-text>
       </v-card>
-      <router-link to="/2nda">Qué es Hardwhere</router-link>
+      <a color="#023047">Qué es Hardwhere?</a>
     </v-app-bar>
   </v-toolbar>
 
@@ -187,7 +187,7 @@ export default {
 .card-container {
   display: flex;
   justify-content: center;
-  gap: 85px;
+  gap: 100px;
   flex-wrap: wrap;
   margin-top: 20px;
 }
