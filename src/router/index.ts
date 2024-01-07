@@ -19,6 +19,11 @@ const routes = [
         name: 'Search',
         component: () => import('@/views/Search.vue'), // Asegúrate de importar correctamente tu componente Search.vue
       },
+      {
+        path: '/resultado',
+        name: 'Resultado',
+        component: () => import('@/views/Resultado.vue'), // Asegúrate de importar correctamente tu componente Search.vue
+      },
     ],
   },
 ]
