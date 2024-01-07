@@ -37,7 +37,7 @@
 
       <!-- Columna para el contenido -->
       <v-col cols="8">
-        <v-card-title>Ejemplo de Título 1</v-card-title>
+        <v-card-title class="custom-title">Ejemplo de Título 1</v-card-title>
         <v-card-text>
           Descripción del primer ejemplo de componente.
         </v-card-text>
@@ -58,7 +58,7 @@
 
       <!-- Columna para el contenido -->
       <v-col cols="8">
-        <v-card-title>Ejemplo de Título 2</v-card-title>
+        <v-card-title class="custom-title">Ejemplo de Título 2</v-card-title>
         <v-card-text>
           Descripción del segundo ejemplo de componente.
         </v-card-text>
@@ -79,6 +79,9 @@
 
 
 <style>
+
+
+
 v-footer a {
   text-decoration: none; /* Quita el subrayado */
   color: white; /* Cambia el color del texto a blanco */
@@ -100,6 +103,10 @@ v-footer a {
 
 .custom-divider {
   border-top: 50px solid #219EBC; /* Grosor y color del divider */
+}
+
+.custom-title {
+  color: #023047; /* Cambio de color del texto del título */
 }
 
 </style>
