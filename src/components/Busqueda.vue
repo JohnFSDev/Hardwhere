@@ -26,32 +26,23 @@
   </v-toolbar>
 
   <v-card>
-\    <v-img src="/ruta/de/tu/imagen.jpg" aspect-ratio="2.75"></v-img>
-    <v-card-title>Nombre Componente</v-card-title>
-    <v-card-text>
-      Descripcion Componente
-    </v-card-text>
-  </v-card>
-
-  <v-divider></v-divider>
-
-  <v-card>
-    \    <v-img src="/ruta/de/tu/imagen.jpg" aspect-ratio="2.75"></v-img>
+    <v-row no-gutters>
+      <!-- Columna para la imagen -->
+      <v-col cols="4">
+        <v-img src="https://picsum.photos/200/300" aspect-ratio="2.75"></v-img>
+      </v-col>
+  
+      <!-- Columna para el contenido -->
+      <v-col cols="8">
         <v-card-title>Nombre Componente</v-card-title>
         <v-card-text>
           Descripcion Componente
         </v-card-text>
-      </v-card>
+      </v-col>
+    </v-row>
+  </v-card>
 
-      <v-divider></v-divider>
-
-      <v-card>
-        \    <v-img src="/ruta/de/tu/imagen.jpg" aspect-ratio="2.75"></v-img>
-            <v-card-title>Nombre Componente</v-card-title>
-            <v-card-text>
-              Descripcion Componente
-            </v-card-text>
-          </v-card>
+  <v-divider></v-divider>
 
           <template>
             <v-footer style="background-color: #023047;">

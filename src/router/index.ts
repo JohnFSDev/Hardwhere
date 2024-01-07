@@ -14,6 +14,11 @@ const routes = [
         // which is lazy-loaded when the route is visited.
         component: () => import('@/views/Home.vue'),
       },
+      {
+        path: '/search',
+        name: 'Search',
+        component: () => import('@/views/Search.vue'), // Asegúrate de importar correctamente tu componente Search.vue
+      },
     ],
   },
 ]
