@@ -62,6 +62,37 @@
 
 <v-divider class="my-7"></v-divider>
 
+<v-container>
+  <v-row justify="center" align="center">
+    <v-col cols="4">
+      <v-card class="image-2nd">
+        <v-img src="/computer-ram.jpg" aspect-ratio="1"></v-img>
+        <v-card-title class="custom-title">Ejemplo de Título 1</v-card-title>
+        <v-card-text>
+          Descripción del primer ejemplo de componente.
+        </v-card-text>
+      </v-card>
+    </v-col>
+
+    <v-col cols="4">
+      <v-card class="image-2nd">
+        <v-img src="/computer-ram.jpg" aspect-ratio="1"></v-img>
+        <v-card-title class="custom-title">Ejemplo de Título 1</v-card-title>
+        <v-card-text>
+          Descripción del primer ejemplo de componente.
+        </v-card-text>      </v-card>
+    </v-col>
+
+    <v-col cols="4">
+      <v-card class="image-2nd">
+        <v-img src="/computer-ram.jpg" aspect-ratio="1"></v-img>
+        <v-card-title class="custom-title">Ejemplo de Título 1</v-card-title>
+        <v-card-text>
+          Descripción del primer ejemplo de componente.
+        </v-card-text>      </v-card>
+    </v-col>
+  </v-row>
+</v-container>
   <v-footer style="background-color: #023047; position: fixed; bottom: 0; width: 100%;">
     <a href="#" onclick="scrollToTop()" style="text-decoration: none; color: white; display: block; text-align: center;">
       Inicio de la página
@@ -71,6 +102,11 @@
 </template>
 
 <style>
+
+.image-2nd {
+  width: 200px;
+  height: 200px;
+}
 
 .image-container {
   width: 400px; /* Define el ancho del cuadro de imagen */
