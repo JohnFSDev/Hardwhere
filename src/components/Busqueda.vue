@@ -37,7 +37,7 @@
 
       <!-- Columna para el contenido -->
       <v-col cols="8">
-        <v-card-title class="custom-title bigger-font">Ejemplo de Título 2</v-card-title>
+        <v-card-title class="custom-title font-roboto">Ejemplo de Título 2</v-card-title>
         <v-card-text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum facilisis dolor. Vestibulum vehicula dignissim libero, viverra convallis risus tempus nec...
         </v-card-text>
@@ -80,6 +80,10 @@
 <style>
   /* Importar la fuente Roboto */
   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+  .font-roboto {
+    font-family: 'Roboto', sans-serif !important;
+  }
 
   /* Estilos personalizados */
   v-footer a {
