@@ -77,40 +77,38 @@
 
 </template>
 
-
 <style>
+  /* Importar la fuente Roboto */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-.bigger-font {
-  font-size: 40px; /* Cambiar el tamaño de la fuente según sea necesario */
-}
+  /* Estilos personalizados */
+  v-footer a {
+    text-decoration: none; /* Quita el subrayado */
+    color: white; /* Cambia el color del texto a blanco */
+    display: block; /* Centra el texto */
+    text-align: center; /* Centra el texto */
+  }
 
-v-footer a {
-  text-decoration: none; /* Quita el subrayado */
-  color: white; /* Cambia el color del texto a blanco */
-  display: block; /* Centra el texto */
-  text-align: center; /* Centra el texto */
-}
+  .image-container {
+    width: 180px; /* Define el ancho del cuadro de imagen */
+    height: 180px; /* Define la altura del cuadro de imagen */
+    border-radius: 12px; /* Bordes curvos */
+    overflow: hidden; /* Recorta el contenido que se desborda */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+  }
 
-.image-container {
-  width: 180px; /* Define el ancho del cuadro de imagen */
-  height: 180px; /* Define la altura del cuadro de imagen */
-  border-radius: 12px; /* Bordes curvos */
-  overflow: hidden; /* Recorta el contenido que se desborda */
-  margin-right: 20px; /* Espacio entre la imagen y el texto */
-}
+  .rounded-image {
+    border-radius: 12px; /* Bordes curvos para la imagen */
+  }
 
-.rounded-image {
-  border-radius: 12px; /* Bordes curvos para la imagen */
-}
+  .custom-divider {
+    border-top: 50px solid #219EBC; /* Grosor y color del divider */
+  }
 
-.custom-divider {
-  border-top: 50px solid #219EBC; /* Grosor y color del divider */
-}
-
-.custom-title {
-  color: #023047; /* Cambio de color del texto del título */
-}
-
+  .custom-title {
+    color: #023047; /* Cambio de color del texto del título */
+    font-family: 'Roboto', sans-serif; /* Aplicar la fuente Roboto */
+  }
 </style>
 
 <script>
