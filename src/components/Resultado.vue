@@ -22,7 +22,7 @@
         ></v-text-field>
       </v-card-text>
     </v-card>
-    <a href="#">Que es Hardwhere</a>
+    <a href="#">Que es Hardwhere?</a>
     </v-app-bar>
   </v-toolbar>
 
