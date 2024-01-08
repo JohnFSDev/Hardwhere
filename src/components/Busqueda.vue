@@ -37,9 +37,9 @@
 
       <!-- Columna para el contenido -->
       <v-col cols="8">
-        <v-card-title class="custom-title">Ejemplo de Título 1</v-card-title>
+        <v-card-title class="custom-title bigger-font">Ejemplo de Título 2</v-card-title>
         <v-card-text>
-          Descripción del primer ejemplo de componente.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum facilisis dolor. Vestibulum vehicula dignissim libero, viverra convallis risus tempus nec...
         </v-card-text>
       </v-col>
     </v-row>
@@ -80,7 +80,9 @@
 
 <style>
 
-
+.bigger-font {
+  font-size: 40px; /* Cambiar el tamaño de la fuente según sea necesario */
+}
 
 v-footer a {
   text-decoration: none; /* Quita el subrayado */
