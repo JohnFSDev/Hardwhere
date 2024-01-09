@@ -11,9 +11,9 @@
 
       <!-- Columna para el contenido -->
       <v-col cols="8">
-        <v-card-title class="custom-title">Ejemplo de Título 1</v-card-title>
+        <v-card-title class="custom-title font-roboto">Ejemplo de Título 2</v-card-title>
         <v-card-text>
-          Descripción del primer ejemplo de componente.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum facilisis dolor. Vestibulum vehicula dignissim libero, viverra convallis risus tempus nec...
         </v-card-text>
       </v-col>
     </v-row>
@@ -43,8 +43,9 @@
 
 </template>
 
-
 <style>
+  /* Importar la fuente Roboto */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .image-container {
   width: 180px; /* Define el ancho del cuadro de imagen */
@@ -54,18 +55,14 @@
   margin-right: 20px; /* Espacio entre la imagen y el texto */
 }
 
-.rounded-image {
-  border-radius: 12px; /* Bordes curvos para la imagen */
-}
+  .custom-divider {
+    border-top: 50px solid #219EBC; /* Grosor y color del divider */
+  }
 
-.custom-divider {
-  border-top: 50px solid #219EBC; /* Grosor y color del divider */
-}
-
-.custom-title {
-  color: #023047; /* Cambio de color del texto del título */
-}
-
+  .custom-title {
+    color: #023047; /* Cambio de color del texto del título */
+    font-family: 'Roboto', sans-serif; /* Aplicar la fuente Roboto */
+  }
 </style>
 
 <script>
