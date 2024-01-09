@@ -21,7 +21,7 @@
 
   <!-- Divider entre cada resultado -->
   <v-divider class="my-7 custom-divider"></v-divider>  <!-- Resultado de búsqueda 2 -->
-  <v-card>
+  <v-card elevation="0">
     <v-row no-gutters>
       <!-- Columna para el contenedor de la imagen -->
       <v-col cols="4">
