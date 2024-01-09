@@ -1,6 +1,6 @@
 <template>
 <v-container>
-  <v-card>
+  <v-card elevation="0">
     <v-row no-gutters>
       <!-- Columna para el contenedor de la imagen -->
       <v-col cols="4">
