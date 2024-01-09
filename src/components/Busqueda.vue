@@ -1,30 +1,4 @@
 <template>
-    <v-toolbar>
-    <v-app-bar color="#FFB703" :elevation="0">
-      <img src="/hw_logo.png" height="270" />
-      <v-card
-      class="mx-auto"
-      color="grey-lighten-3"
-      max-width="700"
-    >
-      <v-card-text>
-        <v-text-field
-          :loading="loading"
-          density="compact"
-          variant="solo"
-          label="Buscar"
-          append-inner-icon="mdi-magnify"
-          single-line
-          hide-details
-          style="width: 600px;"
-          @click:append-inner="onClick"
-        ></v-text-field>
-      </v-card-text>
-    </v-card>
-    <a href="#">Que es Hardwhere</a>
-    </v-app-bar>
-  </v-toolbar>
-
 <v-container>
   <v-card>
     <v-row no-gutters>
@@ -65,29 +39,12 @@
       </v-col>
     </v-row>
   </v-card>
-</v-container>
-  
-<v-footer style="background-color: #023047; position: fixed; bottom: 0; width: 100%;">
-  <a href="#" onclick="scrollToTop()" style="text-decoration: none; color: white; display: block; text-align: center;">
-    Inicio de la página
-  </a>
-</v-footer>
-
-          
+</v-container>         
 
 </template>
 
 
 <style>
-
-
-
-v-footer a {
-  text-decoration: none; /* Quita el subrayado */
-  color: white; /* Cambia el color del texto a blanco */
-  display: block; /* Centra el texto */
-  text-align: center; /* Centra el texto */
-}
 
 .image-container {
   width: 180px; /* Define el ancho del cuadro de imagen */
@@ -128,17 +85,5 @@ v-footer a {
         }, 2000)
       },
     },
-  }
-
-  function scrollToTop() {
-    // Obtener el elemento del cuerpo de la página
-    const bodyElement = document.querySelector('body');
-
-    // Desplazar suavemente hacia arriba
-    bodyElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start', // Hacia el inicio del contenedor (parte superior)
-      inline: 'nearest', // Alinea el inicio del contenedor con el borde más cercano del viewport
-    });
   }
 </script>

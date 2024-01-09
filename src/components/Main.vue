@@ -1,34 +1,7 @@
 <template>
-  <v-toolbar>
-    <v-app-bar color="#FFB703" :elevation="0">
-      <img src="/hw_logo.png" height="270" />
-      <v-card
-        class="mx-auto"
-        color="grey-lighten-3"
-        max-width="700"
-      >
-        <v-card-text>
-          <v-text-field
-            :loading="loading"
-            density="compact"
-            variant="solo"
-            label="Buscar"
-            append-inner-icon="mdi-magnify"
-            single-line
-            hide-details
-            style="width: 600px; border: transparent;"
-            @click:append-inner="onClick"
-          ></v-text-field>
-        </v-card-text>
-      </v-card>
-      <a style="color: #023047; margin: 0 20px;">Qué es Hardwhere?</a>
-    </v-app-bar>
-  </v-toolbar>
-
   <!-- Contenedor flex para los cards -->
   <div class="card-container">
     <v-card
-      :loading="loading"
       :class="'RAM'"
       class="my-12 card-item"
       max-width="250"
@@ -55,7 +28,6 @@
     </v-card>
 
     <v-card
-      :loading="loading"
       :class="'Graf'"
       class="my-12 card-item"
       max-width="250"
@@ -82,12 +54,12 @@
     </v-card>
 
     <v-card
-    :loading="loading"
     :class="'Graf'"
     class="my-12 card-item"
     max-width="250"
     height="250"
   >
+  
     <template v-slot:loader="{ isActive }">
       <v-progress-linear
         :active="isActive"
@@ -109,7 +81,6 @@
   </v-card>
 
   <v-card
-  :loading="loading"
   :class="'Graf'"
   class="my-12 card-item"
   max-width="250"
@@ -136,7 +107,6 @@
 </v-card>
 
 <v-card
-:loading="loading"
 :class="'Graf'"
 class="my-12 card-item"
 max-width="250"
