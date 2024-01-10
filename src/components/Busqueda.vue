@@ -1,45 +1,24 @@
 <template>
-<v-container>
-  <v-card elevation="0">
-    <v-row no-gutters>
-      <!-- Columna para el contenedor de la imagen -->
-      <v-col cols="4">
-        <v-card class="image-container">
-          <v-img src="/computer-ram.jpg" aspect-ratio="1"></v-img>
-        </v-card>
-      </v-col>
+  <v-container>
+    <v-card elevation="0" v-for="(item, index) in data" :key="index" class="mb-4">
+      <v-row no-gutters>
+        <!-- Columna para el contenedor de la imagen -->
+        <v-col cols="4">
+          <v-card class="image-container">
+            <v-img :src="item.imagen" aspect-ratio="1"></v-img>
+          </v-card>
+        </v-col>
 
-      <!-- Columna para el contenido -->
-      <v-col cols="8">
-        <v-card-title class="custom-title font-roboto">Ejemplo de Título 2</v-card-title>
-        <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum facilisis dolor. Vestibulum vehicula dignissim libero, viverra convallis risus tempus nec...
-        </v-card-text>
-      </v-col>
-    </v-row>
-  </v-card>
-
-  <!-- Divider entre cada resultado -->
-  <v-divider class="my-7 custom-divider"></v-divider>  <!-- Resultado de búsqueda 2 -->
-  <v-card elevation="0">
-    <v-row no-gutters>
-      <!-- Columna para el contenedor de la imagen -->
-      <v-col cols="4">
-        <v-card class="image-container">
-          <v-img src="/computer-ram.jpg" aspect-ratio="1"></v-img>
-        </v-card>
-      </v-col>
-
-      <!-- Columna para el contenido -->
-      <v-col cols="8">
-        <v-card-title class="custom-title">Ejemplo de Título 2</v-card-title>
-        <v-card-text>
-          Descripción del segundo ejemplo de componente.
-        </v-card-text>
-      </v-col>
-    </v-row>
-  </v-card>
-</v-container>         
+        <!-- Columna para el contenido -->
+        <v-col cols="8">
+          <v-card-title class="custom-title">{{ item.titulo }}</v-card-title>
+          <v-card-text>{{ item.descripcion }}</v-card-text>
+        </v-col>
+      </v-row>
+      <!-- Divider entre las tarjetas -->
+      <v-divider class="my-7 custom-divider"></v-divider>
+    </v-card>
+  </v-container>         
 
 </template>
 
@@ -62,25 +41,30 @@
     font-family: 'Roboto', sans-serif; /* Aplicar la fuente Roboto */
   }
 
-  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 </style>
 
 <script>
-  export default {
-    data: () => ({
+import jsonData from '/src/assets/data.json';
+export default {
+  data() {
+    return {
+      data: [], // Inicializa el array de datos
       loaded: false,
-      loading: false,
-    }),
+      loading: false
+    };
+  },
+  mounted() {
+    this.data = jsonData; // Asigna los datos del archivo JSON al array 'data'
+  },
+  methods: {
+    onClick() {
+      this.loading = true;
 
-    methods: {
-      onClick () {
-        this.loading = true
-
-        setTimeout(() => {
-          this.loading = false
-          this.loaded = true
-        }, 2000)
-      },
-    },
+      setTimeout(() => {
+        this.loading = false;
+        this.loaded = true;
+      }, 2000);
+    }
   }
+};
 </script>
