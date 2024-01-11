@@ -13,9 +13,9 @@
 
       <!-- Columna para el contenido -->
       <v-col cols="8">
-        <v-card-title class="custom-title">Ejemplo de Título 1</v-card-title>
+        <v-card-title class="custom-title">{{component.title}}</v-card-title>
         <v-card-text>
-          Descripción del primer ejemplo de componente.
+          {{component.description}}
         </v-card-text>
         <v-card-text>
           Marca
