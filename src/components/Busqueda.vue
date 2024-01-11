@@ -1,6 +1,6 @@
 <template>
 <v-container>
-  <v-card v-for="component in components" :key="component.id">
+  <v-card elevation="0" v-for="component in components" :key="component.id">
     <v-row no-gutters>
       <!-- Columna para el contenedor de la imagen -->
       <v-col cols="4">
