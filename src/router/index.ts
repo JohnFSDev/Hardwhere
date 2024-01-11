@@ -1,6 +1,6 @@
 // Composables
+import axios from 'axios'
 import { createRouter, createWebHistory } from 'vue-router'
-
 const routes = [
   {
     path: '/',
@@ -24,6 +24,24 @@ const routes = [
         name: 'Resultado',
         component: () => import('@/views/Resultado.vue'), // Asegúrate de importar correctamente tu componente Search.vue
       },
+      // {
+      //   path: '/Rams',
+      //   name: 'Rams',
+      //   component: () => import('@/views/Search.vue'),
+      //   beforeEnter: async () => {
+      //       axios.get('/api/Rams').then((response) => {
+      //         console.log(response.data);
+      //       }).catch(error => {
+      //         console.error(error);
+      //       })   
+      //   }
+
+      // },
+      {
+        path: ':component', // Ruta dinámica con un parámetro
+        name: 'SearchComponent',
+        component: () => import('@/views/Search.vue'), // Vista principal
+      }
 
     ],
     

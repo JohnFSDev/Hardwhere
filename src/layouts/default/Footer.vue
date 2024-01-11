@@ -1,5 +1,5 @@
 <template>
-    <v-footer @click = "ScrollToTop" style="background-color: #023047; position: fixed; bottom: 0; width: 100%; height: 10%; font-size: 20px;">
+    <v-footer @click = "ScrollToTop" style="background-color: #023047; position: fixed; bottom: 0; width: 100%; height: 6%; font-size: 20px;">
       <v-container class="d-flex justify-center text-white">
         Inicio de Pagina
       </v-container>

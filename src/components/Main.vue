@@ -1,8 +1,10 @@
 <template>
   <!-- Contenedor flex para los cards -->
+  <!-- Este es el contenedor de las rams -->
   <div class="card-container">
-    <v-card
-      :class="'RAM'"
+
+    <router-link to="Rams">
+      <v-card 
       class="my-12 card-item"
       max-width="250"
       height="250"
@@ -26,9 +28,10 @@
         class="text-center title-background"
       >Memoria Ram</v-card-title>
     </v-card>
+  </router-link>
 
+  <router-link to="GraphicCard">
     <v-card
-      :class="'Graf'"
       class="my-12 card-item"
       max-width="250"
       height="250"
@@ -52,9 +55,10 @@
         class="text-center title-background"
       >Tarjeta Gráfica</v-card-title>
     </v-card>
-
+  </router-link>
+    
+  <router-link to="Supply">
     <v-card
-    :class="'Graf'"
     class="my-12 card-item"
     max-width="250"
     height="250"
@@ -79,9 +83,10 @@
       class="text-center title-background"
     >Fuentes de Poder</v-card-title>
   </v-card>
-
-  <v-card
-  :class="'Graf'"
+  </router-link>
+  
+  <router-link to="StorageMemory">
+    <v-card
   class="my-12 card-item"
   max-width="250"
   height="250"
@@ -106,8 +111,11 @@
   >Memorias de Almacenamiento</v-card-title>
 </v-card>
 
-<v-card
-:class="'Graf'"
+  </router-link>
+
+  <router-link to="Processor">
+    
+    <v-card
 class="my-12 card-item"
 max-width="250"
 height="250"
@@ -131,16 +139,15 @@ height="250"
   class="text-center title-background"
 >Procesadores</v-card-title>
 </v-card>
+    
+  </router-link>
+
   </div>
 </template>
 
 <script>
-export default {
-  data: () => ({
-    loaded: false,
-    loading: false,
-  }),
 
+export default {
   methods: {
     onClick() {
       this.loading = true;

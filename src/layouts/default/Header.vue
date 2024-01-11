@@ -1,11 +1,14 @@
 <template>
     <v-app-bar color="#FFB703" :elevation="4" height="60">
-      <a style="" href="/" >
+      <router-link to="/" >
         <v-img
           :width="250"
           cover
           src="/hw_logo.png"
         ></v-img>
+      </router-link>
+      <a href="/" >
+        
 
       </a>
           <v-text-field

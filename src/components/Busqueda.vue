@@ -1,40 +1,21 @@
 <template>
 <v-container>
-  <v-card>
+  <v-card v-for="component in components" :key="component.id">
     <v-row no-gutters>
       <!-- Columna para el contenedor de la imagen -->
       <v-col cols="4">
         <v-card class="image-container">
-          <v-img src="/computer-ram.jpg" aspect-ratio="1"></v-img>
+          <v-img aspect-ratio="1">
+            {{component.urlImg}} 
+          </v-img>
         </v-card>
       </v-col>
 
       <!-- Columna para el contenido -->
       <v-col cols="8">
-        <v-card-title class="custom-title font-roboto">Ejemplo de Título 2</v-card-title>
+        <v-card-title class="custom-title font-roboto">{{component.title}}</v-card-title>
         <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum facilisis dolor. Vestibulum vehicula dignissim libero, viverra convallis risus tempus nec...
-        </v-card-text>
-      </v-col>
-    </v-row>
-  </v-card>
-
-  <!-- Divider entre cada resultado -->
-  <v-divider class="my-7 custom-divider"></v-divider>  <!-- Resultado de búsqueda 2 -->
-  <v-card>
-    <v-row no-gutters>
-      <!-- Columna para el contenedor de la imagen -->
-      <v-col cols="4">
-        <v-card class="image-container">
-          <v-img src="/computer-ram.jpg" aspect-ratio="1"></v-img>
-        </v-card>
-      </v-col>
-
-      <!-- Columna para el contenido -->
-      <v-col cols="8">
-        <v-card-title class="custom-title">Ejemplo de Título 2</v-card-title>
-        <v-card-text>
-          Descripción del segundo ejemplo de componente.
+          {{component.description}}
         </v-card-text>
       </v-col>
     </v-row>
@@ -66,12 +47,22 @@
 </style>
 
 <script>
-  export default {
-    data: () => ({
-      loaded: false,
-      loading: false,
-    }),
 
+  import axios from 'axios'
+  export default {
+    data(){
+      return {
+        components : null
+      }
+    }, async mounted(){
+        await axios.get(`/api/${this.$route.params.component}`).then(response => {
+        this.components = response.data
+        console.log(response.data)
+        console.log();
+        }).catch(error => {
+        console.error(error);
+        })
+      },
     methods: {
       onClick () {
         this.loading = true
@@ -81,6 +72,6 @@
           this.loaded = true
         }, 2000)
       },
-    },
+    }
   }
 </script>
