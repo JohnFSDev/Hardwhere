@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar color="#FFB703" :elevation="4" height="60">
+    <v-app-bar color="#FFB703" :elevation="4">
       <router-link to="/" >
         <v-img
           :width="250"
@@ -29,7 +29,7 @@
 
 </style>
 
-<script>
+<script lang="ts">
   export default {
     data: () => ({
       loaded: false,
