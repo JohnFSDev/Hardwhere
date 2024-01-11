@@ -57,8 +57,7 @@
     }, async mounted(){
         await axios.get(`/api/${this.$route.params.component}`).then(response => {
         this.components = response.data
-        console.log(response.data)
-        console.log();
+        console.log(response.data);
         }).catch(error => {
         console.error(error);
         })
