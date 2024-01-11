@@ -2,7 +2,7 @@
 
 <v-container>
 
-  <v-card>
+  <v-card elevation="0">
     <v-row no-gutters>
       <!-- Columna para el contenedor de la imagen -->
       <v-col cols="4">
@@ -34,26 +34,21 @@
 
 </v-container>
 
-<v-divider class="my-7"></v-divider>
 
 <v-container>
-  <!-- ... Código anterior ... -->
 
   <v-divider class="my-7"></v-divider>
 
-  <v-row justify="center">
+  <!-- <v-row justify="center">
     <v-col cols="4" v-for="i in 3" :key="i">
       <v-card class="image-2nd">
         <v-row no-gutters>
-          <!-- Columna para la imagen -->
           <v-col cols="4">
             <v-card class="image-2nd">
-              <!-- Tu imagen -->
               <v-img src="/computer-ram.jpg" aspect-ratio="1"></v-img>
             </v-card>
           </v-col>
 
-          <!-- Columna para el título y la descripción -->
           <v-col cols="8">
             <v-card-title class="custom-title" style="color: black;">Ejemplo de Título 1</v-card-title>
             <v-card-text>
@@ -63,7 +58,7 @@
         </v-row>
       </v-card>
     </v-col>
-  </v-row>
+  </v-row> -->
 </v-container>
 
 
@@ -71,17 +66,24 @@
 
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700&display=swap');
+
+  .custom-title {
+    color: #023047;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 40px;
+  }
+
 .image-2nd {
   width: 150px;
   height: 150px;
 }
 
 .image-container {
-  width: 400px; /* Define el ancho del cuadro de imagen */
-  height: 400px; /* Define la altura del cuadro de imagen */
+  width: 350px; /* Define el ancho del cuadro de imagen */
+  height: 350px; /* Define la altura del cuadro de imagen */
   border-radius: 12px; /* Bordes curvos */
   overflow: hidden; /* Recorta el contenido que se desborda */
-  margin-right: 20px; /* Espacio entre la imagen y el texto */
 }
 
 .rounded-image {
@@ -91,33 +93,53 @@
 </style>
 
 <script>
+  import axios from 'axios';
+
   export default {
     data: () => ({
       loaded: false,
       loading: false,
+      components: null,
     }),
 
+    async mounted() {
+      await axios.get(`/api/${this.$route.params.component}`).then(response => {
+        this.components = response.data;
+        console.log(response.data);
+      }).catch(error => {
+        console.error(error);
+      });
+
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+        this.loaded = true;
+      }, 2000);
+
+      this.$nextTick(() => {
+        this.scrollToTop();
+      });
+    },
+
     methods: {
-      onClick () {
-        this.loading = true
+      onClick() {
+        this.loading = true;
 
         setTimeout(() => {
-          this.loading = false
-          this.loaded = true
-        }, 2000)
+          this.loading = false;
+          this.loaded = true;
+        }, 2000);
+      },
+
+      scrollToTop() {
+        const bodyElement = document.querySelector('body');
+
+        bodyElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest',
+        });
       },
     },
-  }
-
-  function scrollToTop() {
-    // Obtener el elemento del cuerpo de la página
-    const bodyElement = document.querySelector('body');
-
-    // Desplazar suavemente hacia arriba
-    bodyElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start', // Hacia el inicio del contenedor (parte superior)
-      inline: 'nearest', // Alinea el inicio del contenedor con el borde más cercano del viewport
-    });
   }
 </script>
