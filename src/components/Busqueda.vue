@@ -48,13 +48,14 @@ import jsonData from '/src/assets/data.json';
 export default {
   data() {
     return {
-      data: [], // Inicializa el array de datos
+      data: [],
       loaded: false,
       loading: false
     };
   },
   mounted() {
-    this.data = jsonData; // Asigna los datos del archivo JSON al array 'data'
+    this.data = jsonData;
+    console.log('Datos del archivo JSON:', this.data);
   },
   methods: {
     onClick() {
