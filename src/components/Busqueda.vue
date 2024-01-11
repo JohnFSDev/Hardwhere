@@ -25,8 +25,6 @@
 </template>
 
 <style>
-  /* Importar la fuente Roboto */
-  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .image-container {
   width: 180px; /* Define el ancho del cuadro de imagen */
@@ -44,6 +42,7 @@
     color: #023047; /* Cambio de color del texto del título */
     font-family: 'Roboto', sans-serif; /* Aplicar la fuente Roboto */
   }
+
 </style>
 
 <script>
@@ -74,4 +73,5 @@
       },
     }
   }
+};
 </script>
