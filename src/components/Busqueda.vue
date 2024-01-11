@@ -43,6 +43,7 @@
     font-family: 'Roboto', sans-serif; /* Aplicar la fuente Roboto */
   }
 
+
 </style>
 
 <script>
@@ -73,5 +74,6 @@
       },
     }
   }
+};
 };
 </script>
