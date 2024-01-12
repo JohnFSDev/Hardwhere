@@ -1,6 +1,6 @@
 
 <template>
-  <v-container fluid style="background-color: #f4f4f6;">
+  <v-container fluid class="fill-height d-flex" style="background-color: #f4f4f6;">
     <v-container>
       <v-card elevation="0" style="background-color: #f4f4f6;">
         <v-row align="center">
@@ -90,6 +90,13 @@
     font-size: 20px !important;
     margin-top: 20px;
   }
+
+  body {
+    background-color: #f4f4f6;
+    margin: 0; /* Asegura que no haya márgenes en el cuerpo de la página */
+    padding: 0; /* Asegura que no haya relleno en el cuerpo de la página */
+  }
+
 </style>
 
 <script>
