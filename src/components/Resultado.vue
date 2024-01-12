@@ -93,8 +93,8 @@
 
   body {
     background-color: #f4f4f6;
-    margin: 0; /* Asegura que no haya márgenes en el cuerpo de la página */
-    padding: 0; /* Asegura que no haya relleno en el cuerpo de la página */
+    margin: 0;
+    padding: 0;
   }
 
 </style>
