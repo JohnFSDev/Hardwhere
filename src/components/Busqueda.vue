@@ -49,19 +49,25 @@
 <script>
 
   import axios from 'axios'
+  // import searchBar from '@/layouts/default/Header.vue'
   export default {
     data(){
       return {
         components : null
       }
-    }, async mounted(){
+    },
+    async mounted(){
         await axios.get(`/api/${this.$route.params.component}`).then(response => {
         this.components = response.data
         console.log(response.data);
+        console.log(this.$route.params.component)
         }).catch(error => {
         console.error(error);
         })
       },
+    // components:{
+    //   //Colocar los componentes del vue.
+    // },
     methods: {
       onClick () {
         this.loading = true

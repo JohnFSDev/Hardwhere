@@ -1,20 +1,15 @@
 
 <template>
-  <v-container fluid style="background-color: #f4f4f6;">
     <v-container>
-      <v-card elevation="0" style="background-color: #f4f4f6;">
-        <v-row align="center">
+      <v-card elevation="2">
+        <v-row>
           <!-- Columna para el contenedor de la imagen -->
-          <v-col cols="4">
-            <v-card class="image-container">
-              <v-img src="/computer-ram.jpg" aspect-ratio="1"></v-img>
-            </v-card>
-          </v-col>
-
+          
+          <v-img src="/computer-ram.jpg"></v-img>
           <!-- Columna para el contenido -->
-          <v-col cols="8" class="mt-2">
+          <v-col cols="8" class="text-sm">
             <v-card-title class="custom-title">ASUS Dual Geforce RTX 4060</v-card-title>
-            <v-card-text class="limited-width">
+            <v-card-text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum facilisis dolor. Vestibulum vehicula dignissim libero, viverra convallis risus tempus nec. Nullam aliquet odio vel risus rhoncus, a convallis leo sollicitudin. Sed eu purus neque. Sed ultricies ligula ut 
             </v-card-text>
             <v-card-text style="font-size: 22px;">
@@ -31,27 +26,27 @@
           </v-col>
         </v-row>
       </v-card>
-    </v-container>
+
+      <v-divider class="my-2"></v-divider>
 
     <v-container>
-      <v-divider class="my-7"></v-divider>
-
       <v-row justify="center">
         <v-col cols="4" v-for="i in 3" :key="i">
-          <v-card class="image-2nd">
+          <v-card>
             <v-row no-gutters>
               <v-col cols="4">
-                <v-card class="image-2nd">
-                  <v-img src="/computer-ram.jpg" aspect-ratio="1"></v-img>
-                </v-card>
+                <v-sheet height="150">
+                  <v-img  style="height: 100%; width: 100%; object-fit: contain" src="/computer-ram.jpg" aspect-ratio="1"></v-img>
+                </v-sheet>
               </v-col>
 
               <v-col cols="8">
-                <v-card-title style="color: black;">Ejemplo de Título 1</v-card-title>
+                <v-card-title>Ejemplo de Título 1</v-card-title>
                 <v-card-text>
                   Descripción del primer ejemplo de componente.
                 </v-card-text>
               </v-col>
+
             </v-row>
           </v-card>
         </v-col>
