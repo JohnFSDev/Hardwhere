@@ -85,6 +85,13 @@
     font-size: 20px !important;
     margin-top: 20px;
   }
+
+  body {
+    background-color: #f4f4f6;
+    margin: 0;
+    padding: 0;
+  }
+
 </style>
 
 <script>
