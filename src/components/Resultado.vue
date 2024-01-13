@@ -1,15 +1,19 @@
 
 <template>
     <v-container>
-      <v-card elevation="2">
-        <v-row>
+      <v-card elevation="0" style="background-color: #f4f4f6;">
+        <v-row align="center">
           <!-- Columna para el contenedor de la imagen -->
-          
-          <v-img src="/computer-ram.jpg"></v-img>
+          <v-col cols="4">
+            <v-card class="image-container">
+              <v-img src="/computer-ram.jpg" aspect-ratio="1"></v-img>
+            </v-card>
+          </v-col>
+
           <!-- Columna para el contenido -->
-          <v-col cols="8" class="text-sm">
+          <v-col cols="8" class="mt-2">
             <v-card-title class="custom-title">ASUS Dual Geforce RTX 4060</v-card-title>
-            <v-card-text>
+            <v-card-text class="limited-width">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum facilisis dolor. Vestibulum vehicula dignissim libero, viverra convallis risus tempus nec. Nullam aliquet odio vel risus rhoncus, a convallis leo sollicitudin. Sed eu purus neque. Sed ultricies ligula ut 
             </v-card-text>
             <v-card-text style="font-size: 22px;">
