@@ -1,6 +1,7 @@
 
 <template>
-    <v-container>
+  <v-app>
+    <v-container style="background-color: #f4f4f6;">
       <v-card elevation="0" style="background-color: #f4f4f6;">
         <v-row align="center">
           <!-- Columna para el contenedor de la imagen -->
@@ -57,10 +58,15 @@
       </v-row>
     </v-container>
   </v-container>
+</v-app>
 </template>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700&display=swap');
+
+  v-app {
+    background-color: #f4f4f6;
+  }
 
   .custom-title {
     font-size: 30px !important;
@@ -88,12 +94,6 @@
     max-width: 650px;
     font-size: 20px !important;
     margin-top: 20px;
-  }
-
-  body {
-    background-color: #f4f4f6;
-    margin: 0;
-    padding: 0;
   }
 
 </style>
