@@ -1,7 +1,7 @@
 
 <template>
-  <v-app>
-    <v-container style="background-color: #f4f4f6;">
+  <v-container fluid class="fill-height d-flex" style="background-color: #f4f4f6;">
+    <v-container>
       <v-card elevation="0" style="background-color: #f4f4f6;">
         <v-row align="center">
           <!-- Columna para el contenedor de la imagen -->
@@ -31,13 +31,14 @@
           </v-col>
         </v-row>
       </v-card>
+    </v-container>
 
-      <v-divider class="my-2"></v-divider>
+  <v-divider></v-divider>
 
     <v-container>
       <v-row justify="center">
         <v-col cols="4" v-for="i in 3" :key="i">
-          <v-card>
+          <v-card style="background-color: transparent;" elevation="0">
             <v-row no-gutters>
               <v-col cols="4">
                 <v-sheet height="150">
@@ -46,7 +47,7 @@
               </v-col>
 
               <v-col cols="8">
-                <v-card-title>Ejemplo de Título 1</v-card-title>
+                <v-card-title class="customTitle">Ejemplo de Título 1</v-card-title>
                 <v-card-text>
                   Descripción del primer ejemplo de componente.
                 </v-card-text>
@@ -58,20 +59,19 @@
       </v-row>
     </v-container>
   </v-container>
-</v-app>
 </template>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700&display=swap');
-
-  v-app {
-    background-color: #f4f4f6;
-  }
-
   .custom-title {
     font-size: 30px !important;
     color: #023047;
     font-family: 'Zen Maru Gothic', sans-serif; 
+  }
+
+  .customTitle {
+    font-family: 'Zen Maru Gothic', sans-serif; 
+    color: #023047;
   }
 
   .image-2nd {
@@ -94,6 +94,12 @@
     max-width: 650px;
     font-size: 20px !important;
     margin-top: 20px;
+  }
+
+  body {
+    background-color: #f4f4f6;
+    margin: 0; /* Asegura que no haya márgenes en el cuerpo de la página */
+    padding: 0; /* Asegura que no haya relleno en el cuerpo de la página */
   }
 
 </style>
