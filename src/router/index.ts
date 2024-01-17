@@ -14,17 +14,17 @@ const routes = [
         component: () => import('@/views/Home.vue'),
       },
       {
-        path: '/search',
-        name: 'Search',
-        component: () => import('@/views/Search.vue'), // Asegúrate de importar correctamente tu componente Search.vue
-      },
-      {
         path: '/resultado',
         name: 'Resultado',
         component: () => import('@/views/Resultado.vue'), // Asegúrate de importar correctamente tu componente Search.vue
       },
       {
         path: ':component', // Ruta dinámica con un parámetro
+        name: 'SpecificComponent',
+        component: () => import('@/views/Search.vue'), // Vista principal
+      },
+      {
+        path: '/Components/:search',
         name: 'SearchComponent',
         component: () => import('@/views/Search.vue'), // Vista principal
       }

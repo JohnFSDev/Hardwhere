@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <default-header />
+    <default-header/>
     <default-view />
     <default-footer/>
   </v-app>

@@ -1,6 +1,6 @@
 <template>
-<v-container>
-  <v-card elevation="0" v-for="component in components" :key="component.id">
+<v-container class="center-container">
+  <v-card elevation="1" v-for="component in components" :key="component.id">
     <v-row no-gutters>
       <!-- Columna para el contenedor de la imagen -->
       <v-col cols="4">
@@ -20,9 +20,10 @@
       </v-col>
     </v-row>
   </v-card>
-</v-container>         
+</v-container>  
 
 </template>
+
 
 <style>
 
@@ -43,6 +44,13 @@
     font-family: 'Roboto', sans-serif; /* Aplicar la fuente Roboto */
   }
 
+  .center-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 </style>
 
@@ -51,23 +59,23 @@
   import axios from 'axios'
   // import searchBar from '@/layouts/default/Header.vue'
   export default {
-    data(){
-      return {
-        components : null
-      }
+    // data(){
+    //   return {
+    //     components : null
+    //   }
+    // },
+    props: {
+      components : {},
+
     },
     async mounted(){
-        await axios.get(`/api/${this.$route.params.component}`).then(response => {
-        this.components = response.data
-        console.log(response.data);
-        console.log(this.$route.params.component)
-        }).catch(error => {
-        console.error(error);
-        })
-      },
-    // components:{
-    //   //Colocar los componentes del vue.
-    // },
+      // console.log(this.$route.params.component);
+      const datosRuta = this.$route.params.component;
+      // console.log("estoy en datos ruta  " + datosRuta)
+      if(datosRuta != undefined){
+        this.$emit('parametros-ruta', datosRuta);
+      }
+    },
     methods: {
       onClick () {
         this.loading = true
