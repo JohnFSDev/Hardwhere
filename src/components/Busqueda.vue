@@ -6,11 +6,11 @@
         <v-row>
           <!-- Contenedor de la imagen -->
           <v-col cols="3">
-              <v-img :src="component.urlImg" aspect-ratio="1" />
+              <v-img :src="component.urlImg" aspect-ratio="1"/>
           </v-col>
 
           <v-col cols="8">
-            <v-card-title class="custom-title font-roboto">{{component.title}}</v-card-title>
+            <v-card-title class="custom-title">{{component.title}}</v-card-title>
             <v-divider/>
             <v-card-text>
               {{component.description}}

@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="fill-height d-flex align-center justify-center">
-    <v-card class="pa-5" style="width: 100%; max-width: 1000px">
+    <v-card  class="pa-5" style="width: 100%; max-width: 1000px">
       <v-row>
         <!-- Columna para la imagen -->
         <v-col cols="3">
@@ -11,7 +11,7 @@
 
           <!-- Columna para el contenido -->
            <v-col cols="8" class="mt-2">
-              <v-card-title class="custom-title">{{components.title}}</v-card-title>
+              <v-card-title class="customTitleResult">{{components.title}}</v-card-title>
                 <v-divider class="border-opacity-60"/>
                 <template v-for="(value, key) in components" :key="key">
                   <v-card-text v-if="key !== 'title' && key !== 'description' && key !== 'urlImg'" class="text-left" style="font-size: 22px;">
@@ -24,7 +24,7 @@
     
   <v-divider/>
 
-    <v-container>
+    <!-- <v-container>
       <v-row justify="center">
         <v-col cols="4" v-for="i in 3" :key="i">
           <v-card style="background-color: transparent;" elevation="0">
@@ -46,21 +46,16 @@
           </v-card>
         </v-col>
       </v-row>
-    </v-container>
+    </v-container> -->
   </v-container>
 </template>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700&display=swap');
-  .custom-title {
+  .customTitleResult {
     font-size: 30px !important;
     color: #023047;
     font-family: 'Zen Maru Gothic', sans-serif; 
-  }
-
-  .customTitle {
-    font-family: 'Zen Maru Gothic', sans-serif; 
-    color: #023047;
   }
 
   .image-2nd {
