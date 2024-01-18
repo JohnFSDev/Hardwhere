@@ -14,7 +14,7 @@ const routes = [
         component: () => import('@/views/Home.vue'),
       },
       {
-        path: '/resultado',
+        path: '/Components/:id',
         name: 'Resultado',
         component: () => import('@/views/Resultado.vue'), // Asegúrate de importar correctamente tu componente Search.vue
       },
@@ -24,7 +24,7 @@ const routes = [
         component: () => import('@/views/Search.vue'), // Vista principal
       },
       {
-        path: '/Components/:search',
+        path: '/Search/:search',
         name: 'SearchComponent',
         component: () => import('@/views/Search.vue'), // Vista principal
       }

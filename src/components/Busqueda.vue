@@ -1,29 +1,27 @@
 <template>
-<v-container class="center-container">
-  <v-card elevation="1" v-for="component in components" :key="component.id">
-    <v-row no-gutters>
-      <!-- Columna para el contenedor de la imagen -->
-      <v-col cols="4">
-        <v-card class="image-container">
-          <v-img aspect-ratio="1">
-            {{component.urlImg}} 
-          </v-img>
-        </v-card>
-      </v-col>
 
-      <!-- Columna para el contenido -->
-      <v-col cols="8">
-        <v-card-title class="custom-title font-roboto">{{component.title}}</v-card-title>
-        <v-card-text>
-          {{component.description}}
-        </v-card-text>
-      </v-col>
-    </v-row>
-  </v-card>
-</v-container>  
+    <v-container class="center-container">
+      <v-card elevation="1" v-for="component in components" :key="component.id" class="mb-4">
+        <v-row>
+          <!-- Columna para el contenedor de la imagen -->
+
+            <v-card class="image-container">
+              <v-img :src="component.urlImg" aspect-ratio="1"/>
+            </v-card>
+
+          <!-- Columna para el contenido -->
+          <v-col cols="8">
+            <v-card-title class="custom-title font-roboto">{{component.title}}</v-card-title>
+            <v-card-text>
+              {{component.description}}
+            </v-card-text>
+          </v-col>
+        </v-row>
+      </v-card>
+      <!-- <v-pagination class="my-4" :length="15"></v-pagination> -->
+    </v-container>
 
 </template>
-
 
 <style>
 
@@ -66,9 +64,9 @@
     // },
     props: {
       components : {},
-
     },
     async mounted(){
+      // console.log(this.searchInfo)
       // console.log(this.$route.params.component);
       const datosRuta = this.$route.params.component;
       // console.log("estoy en datos ruta  " + datosRuta)

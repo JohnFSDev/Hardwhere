@@ -1,39 +1,27 @@
-
 <template>
-  <v-container fluid class="fill-height d-flex" style="background-color: #f4f4f6;">
-    <v-container>
-      <v-card elevation="0" style="background-color: #f4f4f6;">
-        <v-row align="center">
-          <!-- Columna para el contenedor de la imagen -->
-          <v-col cols="4">
-            <v-card class="image-container">
-              <v-img src="/computer-ram.jpg" aspect-ratio="1"></v-img>
-            </v-card>
-          </v-col>
+  <v-container fluid class="fill-height d-flex align-center justify-center">
+    <v-card  class="pa-5" style="width: 100%; max-width: 1000px">
+      <v-row>
+        <!-- Columna para la imagen -->
+        <v-col cols="3">
+          <v-card class="image-container">
+            <v-img :src="components.urlImg" aspect-ratio="1"></v-img>
+          </v-card>
+        </v-col>
 
           <!-- Columna para el contenido -->
-          <v-col cols="8" class="mt-2">
-            <v-card-title class="custom-title">ASUS Dual Geforce RTX 4060</v-card-title>
-            <v-card-text class="limited-width">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum facilisis dolor. Vestibulum vehicula dignissim libero, viverra convallis risus tempus nec. Nullam aliquet odio vel risus rhoncus, a convallis leo sollicitudin. Sed eu purus neque. Sed ultricies ligula ut 
-            </v-card-text>
-            <v-card-text style="font-size: 22px;">
-              Marca: ASUS
-            </v-card-text>
-          
-            <v-card-text style="font-size: 22px;">
-              Graphic Coprocessor: Nvidia Geforce 4060
-            </v-card-text>
-          
-            <v-card-text style="font-size: 22px;">
-              Graphics Ram: 2500mhz
-            </v-card-text>
+           <v-col cols="8" class="mt-2">
+              <v-card-title class="custom-title">{{components.title}}</v-card-title>
+                <template v-for="(value, key) in components" :key="key">
+                  <v-card-text v-if="key !== 'title' && key !== 'description' && key !== 'urlImg'" class="text-left" style="font-size: 22px;">
+                  {{ key }}: {{ value }}
+                  </v-card-text>
+                </template>
           </v-col>
-        </v-row>
-      </v-card>
-    </v-container>
-
-  <v-divider></v-divider>
+      </v-row>
+    </v-card>
+    
+  <v-divider/>
 
     <v-container>
       <v-row justify="center">
@@ -80,11 +68,13 @@
   }
 
   .image-container {
-    width: 400px;
-    height: 400px;
-    border-radius: 12px;
-    overflow: hidden;
-  }
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* Fondo blanco para la imagen */
+  border-radius: 12px;
+  overflow: hidden;
+  margin-right: 20px; /* Margen a la derecha para separar la imagen del texto */
+}
 
   .rounded-image {
     border-radius: 12px;
@@ -111,17 +101,11 @@
     data: () => ({
       loaded: false,
       loading: false,
-      components: null,
+      components: {}
     }),
 
-    async mounted() {
-      await axios.get(`/api/${this.$route.params.component}`).then(response => {
-        this.components = response.data;
-        console.log(response.data);
-      }).catch(error => {
-        console.error(error);
-      });
-
+    created() {
+      this.componentMethod();
       this.loading = true;
       setTimeout(() => {
         this.loading = false;
@@ -142,6 +126,15 @@
           this.loaded = true;
         }, 2000);
       },
+      async componentMethod(){
+        console.log(this.$route.params.components)
+      await axios.get(`/api/Components/5`).then(response => {
+        this.components = response.data;
+        console.log(this.components);
+      }).catch(error => {
+        console.error(error);
+      });
+},
 
       scrollToTop() {
         const bodyElement = document.querySelector('body');

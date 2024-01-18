@@ -5,7 +5,7 @@
           :width="250"
           cover
           src="/hw_logo.png"
-        ></v-img>
+        />
       </a>
         
           <v-text-field
@@ -22,7 +22,7 @@
           
       <a style="color: #023047; margin: 0 30px;">¿Qué es Hardwhere?</a>
     </v-app-bar>
-    <busqueda :components="components" @parametros-ruta =  "DataSearch"/>
+    <busqueda :components="components" :search-value="search" @parametros-ruta =  "DataSearch"/>
 </template>
 
 <style>
@@ -66,9 +66,10 @@
       },
       async UserSearch() {
         
+        console.log(this.search);
       await axios.get(`/api/Components/Search?searchText=${this.search}&pageResults=3&page=1`).then(response => {
         this.components = response.data;
-        this.$router.push(`Search?searchText=${this.search}&pageResults=3&page=1`)
+        this.$router.push('/search')
         console.log(response.data);
 
       }).catch(error => {
