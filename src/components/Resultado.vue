@@ -103,7 +103,6 @@
       loading: false,
       components: {}
     }),
-
     created() {
       this.componentMethod();
       this.loading = true;
@@ -126,6 +125,9 @@
           this.loaded = true;
         }, 2000);
       },
+      reloadPage() {
+      window.location.reload();
+    },
       async componentMethod(){
         console.log(this.$route.params.id)
       await axios.get(`/api/Components/` + this.$route.params.id).then(response => {

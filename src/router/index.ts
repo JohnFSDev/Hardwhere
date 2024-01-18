@@ -1,6 +1,9 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
-const routes = [
+
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes: [
   {
     path: '/',
     component: () => import('@/layouts/default/Default.vue'),
@@ -14,17 +17,17 @@ const routes = [
         component: () => import('@/views/Home.vue'),
       },
       {
-        path: '/Components/:id',
+        path: 'Components/:id',
         name: 'Resultado',
         component: () => import('@/views/Resultado.vue'), // Asegúrate de importar correctamente tu componente Search.vue
       },
       {
-        path: '/:component', // Ruta dinámica con un parámetro
+        path: ':component', // Ruta dinámica con un parámetro
         name: 'SpecificComponent',
         component: () => import('@/views/Search.vue'), // Vista principal
       },
       {
-        path: '/Search/:search',
+        path: 'Search/:search',
         name: 'SearchComponent',
         component: () => import('@/views/Search.vue'), // Vista principal
       }
@@ -33,10 +36,6 @@ const routes = [
     
   },
 ]
-
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
-})
+});
 
 export default router

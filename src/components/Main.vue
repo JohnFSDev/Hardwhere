@@ -3,7 +3,7 @@
   <!-- Este es el contenedor de las rams -->
   <div class="card-container">
 
-    <a href="Rams">
+    <router-link to="Rams">
       <v-card 
       class="my-12 card-item"
       max-width="250"
@@ -28,12 +28,9 @@
         class="text-center title-background"
       >Memoria Ram</v-card-title>
     </v-card>
-    </a>
+    </router-link>
 
-
-
-
-  <a href="GraphicCard">
+    <router-link to="GraphicCard">
     <v-card
       class="my-12 card-item"
       max-width="250"
@@ -58,10 +55,10 @@
         class="text-center title-background"
       >Tarjeta Gráfica</v-card-title>
     </v-card>
-  </a>
+ </router-link>
 
     
-  <a href="Supply">
+ <router-link to="Supply">
     <v-card
     class="my-12 card-item"
     max-width="250"
@@ -87,9 +84,9 @@
       class="text-center title-background"
     >Fuentes de Poder</v-card-title>
   </v-card>
-</a>
+ </router-link>
   
-  <a href="StorageMemory">
+ <router-link to="StorageMemory">
     <v-card
   class="my-12 card-item"
   max-width="250"
@@ -114,9 +111,9 @@
     class="text-center title-background"
   >Memorias de Almacenamiento</v-card-title>
 </v-card>
-</a>
+ </router-link>
 
-  <a href="Processor">
+ <router-link to="Processor">
     
     <v-card
 class="my-12 card-item"
@@ -143,7 +140,7 @@ height="250"
 >Procesadores</v-card-title>
 </v-card>
     
-</a>
+ </router-link>
 
   </div>
 </template>

@@ -22,7 +22,7 @@
 
       <a style="color: #023047; margin: 0 30px;">¿Qué es Hardwhere?</a>
     </v-app-bar>
-    <busqueda :components="components" :search-value="search" @parametros-ruta="DataSearch()" />
+    <!-- <busqueda :components="components" :search-value="search" @parametros-ruta="DataSearch()" /> -->
 </template>
 
 <style>
@@ -31,18 +31,11 @@
 
 <script lang="ts">
 
-  import axios from 'axios'
-  import busqueda from '@/components/Busqueda.vue'
-
   export default {
-    components:{
-      busqueda,
-    },
     data: () => ({
       loaded: false,
       loading: false,
       search: '',
-      components: null,
     }),
     methods: {
       onClick () {
@@ -53,28 +46,19 @@
           this.loaded = true
         }, 2000)
       },
-      mounted(){
-        this.DataSearch()
-      },
-      async DataSearch(){
-        await axios.get(`/api/${this.$route.params.component}`).then(response => {
-        this.components = response.data
-        console.log(response.data);
-        }).catch(error => {
-        console.error(error);
-        })
-      },
       async UserSearch() {
 
-        console.log(this.search);
-      await axios.get(`/api/Components/Search?searchText=${this.search}&pageResults=3&page=1`).then(response => {
-        this.components = response.data;
-        this.$router.push('/search')
-        console.log(response.data);
+        this.$router.push({ name: 'SearchComponent', params: { search: this.search } });
 
-      }).catch(error => {
-        console.error(error);
-      });
+      //   console.log(this.search);
+      // await axios.get(`/api/Components/Search?searchText=${this.search}&pageResults=3&page=1`).then(response => {
+      //   this.components = response.data;
+      //   this.$router.push('/search')
+      //   console.log(response.data);
+
+      // }).catch(error => {
+      //   console.error(error);
+      // });
     },
   }
 }

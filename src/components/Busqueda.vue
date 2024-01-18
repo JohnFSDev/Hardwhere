@@ -19,7 +19,7 @@
           </v-col>
         </v-row>
       </v-card>
-      <!-- <v-pagination class="my-4" :length="15"></v-pagination> -->
+      <v-pagination v-model="currentPage" class="my-4" :length="totalResults"></v-pagination>
     </v-container>
 
 </template>
@@ -56,31 +56,39 @@
 <script>
 
   import axios from 'axios'
-  // import searchBar from '@/layouts/default/Header.vue'
   export default {
-    // data(){
-    //   return {
-    //     components : null
-    //   }
-    // },
-    props: {
-      components : {
-
-      },
-      
-    },
-    async mounted(){
-      // console.log(this.searchInfo)
-      // console.log(this.$route.params.component);
-      const datosRuta = this.$route.params.component;
-      console.log(datosRuta)
-      // console.log("estoy en datos ruta  " + datosRuta)
-      if(datosRuta != undefined){
-        this.$emit('parametros-ruta', datosRuta);
+    data(){
+      return {
+        components : null,
+        currentPage: 1, //Inicializa en 1, varia dependiendo de lo que clicke el usuario.
+        totalResults: 3
       }
+    },
+    watch: {
+    currentPage() {
+      
+    // this.SpecificComponent();
+    this.searchComponent();
+
+    },
+  },
+
+    created(){
+
+        this.searchComponent();
+
+      // console.log(this.searchInfo)
+
+      // const datosRuta = this.$route.params.component;
+      // console.log(datosRuta)
+      // console.log("estoy en datos ruta  " + datosRuta)
+      // if(datosRuta != undefined){
+      //   this.$emit('parametros-ruta', datosRuta);
+      // }
     },
     methods: {
       onClick (id) {
+        
         this.$router.push(`/Components/${id}`);
         this.loading = true
 
@@ -89,6 +97,29 @@
           this.loaded = true
         }, 2000)
       },
+      searchComponent(){
+        if(this.$route.params.search){
+          axios.get(`/api/Components/Search?searchText=${this.$route.params.search}&pageResults=${this.totalResults}&page=${this.currentPage}`).then(response => {
+        this.components = response.data;
+        console.log(response.data);
+      }).catch(error => {
+        console.error(error);
+      });
+        }
+        axios.get(`/api/${this.$route.params.component}`).then(response => {
+        this.components = response.data
+        console.log(response.data);
+        }).catch(error => {
+        console.error(error);
+        });
+
+              // console.log(this.$route.params.search);
+        // console.log(this.totalPages)
+        // console.log(this.currentPage)
+      },
+      SpecificComponent(){
+
+      }
     }
   }
 </script>
