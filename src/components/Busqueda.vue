@@ -1,7 +1,8 @@
 <template>
 
     <v-container class="center-container">
-      <v-card elevation="1" v-for="component in components" :key="component.id" class="mb-4">
+      <v-card v-on:click="onClick(component.id)" elevation="1" v-for="component in components" :key="component.id" class="mb-4">
+
         <v-row>
           <!-- Columna para el contenedor de la imagen -->
 
@@ -63,19 +64,24 @@
     //   }
     // },
     props: {
-      components : {},
+      components : {
+
+      },
+      
     },
     async mounted(){
       // console.log(this.searchInfo)
       // console.log(this.$route.params.component);
       const datosRuta = this.$route.params.component;
+      console.log(datosRuta)
       // console.log("estoy en datos ruta  " + datosRuta)
       if(datosRuta != undefined){
         this.$emit('parametros-ruta', datosRuta);
       }
     },
     methods: {
-      onClick () {
+      onClick (id) {
+        this.$router.push(`/Components/${id}`);
         this.loading = true
 
         setTimeout(() => {

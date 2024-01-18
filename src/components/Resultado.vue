@@ -127,8 +127,8 @@
         }, 2000);
       },
       async componentMethod(){
-        console.log(this.$route.params.components)
-      await axios.get(`/api/Components/5`).then(response => {
+        console.log(this.$route.params.id)
+      await axios.get(`/api/Components/` + this.$route.params.id).then(response => {
         this.components = response.data;
         console.log(this.components);
       }).catch(error => {

@@ -19,7 +19,7 @@ const routes = [
         component: () => import('@/views/Resultado.vue'), // Asegúrate de importar correctamente tu componente Search.vue
       },
       {
-        path: ':component', // Ruta dinámica con un parámetro
+        path: '/:component', // Ruta dinámica con un parámetro
         name: 'SpecificComponent',
         component: () => import('@/views/Search.vue'), // Vista principal
       },
