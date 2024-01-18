@@ -1,17 +1,18 @@
 <template>
   <v-container fluid class="fill-height d-flex align-center justify-center">
-    <v-card  class="pa-5" style="width: 100%; max-width: 1000px">
+    <v-card class="pa-5" style="width: 100%; max-width: 1000px">
       <v-row>
         <!-- Columna para la imagen -->
         <v-col cols="3">
-          <v-card class="image-container">
-            <v-img :src="components.urlImg" aspect-ratio="1"></v-img>
-          </v-card>
+          
+            <v-img :src="components.urlImg" aspect-ratio="1"/>
+          
         </v-col>
 
           <!-- Columna para el contenido -->
            <v-col cols="8" class="mt-2">
               <v-card-title class="custom-title">{{components.title}}</v-card-title>
+                <v-divider class="border-opacity-60"/>
                 <template v-for="(value, key) in components" :key="key">
                   <v-card-text v-if="key !== 'title' && key !== 'description' && key !== 'urlImg'" class="text-left" style="font-size: 22px;">
                   {{ key }}: {{ value }}
@@ -67,19 +68,6 @@
     height: 150px;
   }
 
-  .image-container {
-  width: 100%;
-  height: 100%;
-  background-color: #fff; /* Fondo blanco para la imagen */
-  border-radius: 12px;
-  overflow: hidden;
-  margin-right: 20px; /* Margen a la derecha para separar la imagen del texto */
-}
-
-  .rounded-image {
-    border-radius: 12px;
-  }
-
   .limited-width {
     max-width: 650px;
     font-size: 20px !important;
@@ -125,9 +113,6 @@
           this.loaded = true;
         }, 2000);
       },
-      reloadPage() {
-      window.location.reload();
-    },
       async componentMethod(){
         console.log(this.$route.params.id)
       await axios.get(`/api/Components/` + this.$route.params.id).then(response => {

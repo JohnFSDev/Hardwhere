@@ -45,20 +45,13 @@
           this.loading = false
           this.loaded = true
         }, 2000)
+
       },
       async UserSearch() {
 
-        this.$router.push({ name: 'SearchComponent', params: { search: this.search } });
-
-      //   console.log(this.search);
-      // await axios.get(`/api/Components/Search?searchText=${this.search}&pageResults=3&page=1`).then(response => {
-      //   this.components = response.data;
-      //   this.$router.push('/search')
-      //   console.log(response.data);
-
-      // }).catch(error => {
-      //   console.error(error);
-      // });
+        this.$router.push({ name: 'SearchComponent', params: { search: this.search } }).then(a => {
+          window.location.reload();
+        });
     },
   }
 }
