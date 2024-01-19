@@ -1,7 +1,7 @@
 <template>
 
 <v-container class="d-flex justify-center">
-<div style="width: 100%; max-width: 700px" >
+<div style="width: 100%; max-width: 900px" >
   <v-card class="mb-5" v-on:click="onClick(component.id)" elevation="3" v-for="component in components" :key="component.id">
         <v-row>
           <!-- Contenedor de la imagen -->

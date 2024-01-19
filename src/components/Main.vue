@@ -4,67 +4,7 @@
   <div class="card-container">
 
     <router-link to="Rams">
-      <v-card 
-      class="my-12 card-item"
-      max-width="250"
-      height="250"
-    >
-      <template v-slot:loader="{ isActive }">
-        <v-progress-linear
-          :active="isActive"
-          color="deep-purple"
-          height="4"
-          indeterminate
-        ></v-progress-linear>
-      </template>
-
-      <v-img
-        src="/computer-ram.jpg"
-        class="object-fit-contain"
-        style="max-width: 100%; max-height: 100%;"
-      ></v-img>
-
-      <v-card-title
-        class="text-center title-background"
-      >Memoria Ram</v-card-title>
-    </v-card>
-    </router-link>
-
-    <router-link to="GraphicCard">
-    <v-card
-      class="my-12 card-item"
-      max-width="250"
-      height="250"
-    >
-      <template v-slot:loader="{ isActive }">
-        <v-progress-linear
-          :active="isActive"
-          color="deep-purple"
-          height="4"
-          indeterminate
-        ></v-progress-linear>
-      </template>
-
-      <v-img
-        src="/Graf.png"
-        class="object-fit-contain"
-        style="max-width: 100%; max-height: 100%;"
-      ></v-img>
-
-      <v-card-title
-        class="text-center title-background"
-      >Tarjeta Gráfica</v-card-title>
-    </v-card>
- </router-link>
-
-    
- <router-link to="Supply">
-    <v-card
-    class="my-12 card-item"
-    max-width="250"
-    height="250"
-  >
-  
+      <v-card class="my-12 card-item" max-width="400" height="250">
     <template v-slot:loader="{ isActive }">
       <v-progress-linear
         :active="isActive"
@@ -73,73 +13,111 @@
         indeterminate
       ></v-progress-linear>
     </template>
+ 
+      <v-img src="/computer-ram.jpg" height="200"/>
 
-    <v-img
-      src="/ps.png"
-      class="object-fit-contain"
-      style="max-width: 100%; max-height: 100%;"
-    ></v-img>
+ 
+    <v-divider :thickness="5" ></v-divider>
 
-    <v-card-title
-      class="text-center title-background"
-    >Fuentes de Poder</v-card-title>
+    <v-card-title class="text-center title-background">
+      Tarjeta Gráfica
+    </v-card-title>
+
+  </v-card>
+    </router-link>
+
+    <!-- Este es el contenedor de tarjetas graficas -->
+    <router-link to="GraphicCard">
+      <v-card class="my-12 card-item" max-width="250" height="250">
+    <template v-slot:loader="{ isActive }">
+      <v-progress-linear
+        :active="isActive"
+        color="deep-purple"
+        height="4"
+        indeterminate
+      ></v-progress-linear>
+    </template>
+ 
+      <v-img src="/Graf.png" height="200"/>
+
+ 
+    <v-divider :thickness="5" ></v-divider>
+
+    <v-card-title class="text-center title-background">
+      Tarjeta Gráfica
+    </v-card-title>
+
+  </v-card>
+ </router-link>
+
+    
+ <router-link to="Supply">
+  <v-card class="my-12 card-item" max-width="250" height="250">
+    <template v-slot:loader="{ isActive }">
+      <v-progress-linear
+        :active="isActive"
+        color="deep-purple"
+        height="4"
+        indeterminate
+      ></v-progress-linear>
+    </template>
+ 
+      <v-img src="/ps.png" height="200"/>
+
+ 
+    <v-divider :thickness="5" ></v-divider>
+
+    <v-card-title class="text-center title-background">
+      Tarjeta Gráfica
+    </v-card-title>
+
   </v-card>
  </router-link>
   
  <router-link to="StorageMemory">
-    <v-card
-  class="my-12 card-item"
-  max-width="250"
-  height="250"
->
-  <template v-slot:loader="{ isActive }">
-    <v-progress-linear
-      :active="isActive"
-      color="deep-purple"
-      height="4"
-      indeterminate
-    ></v-progress-linear>
-  </template>
+  <v-card class="my-12 card-item" max-width="250" height="250">
+    <template v-slot:loader="{ isActive }">
+      <v-progress-linear
+        :active="isActive"
+        color="deep-purple"
+        height="4"
+        indeterminate
+      ></v-progress-linear>
+    </template>
+ 
+      <v-img src="/m2.jpg" height="200"/>
 
-  <v-img
-    src="/m2.jpg"
-    class="object-fit-contain"
-    style="max-width: 100%; max-height: 100%;"
-  ></v-img>
+ 
+    <v-divider :thickness="5" ></v-divider>
 
-  <v-card-title
-    class="text-center title-background"
-  >Memorias de Almacenamiento</v-card-title>
-</v-card>
+    <v-card-title class="text-center title-background">
+      Tarjeta Gráfica
+    </v-card-title>
+
+  </v-card>
  </router-link>
 
  <router-link to="Processor">
-    
-    <v-card
-class="my-12 card-item"
-max-width="250"
-height="250"
->
-<template v-slot:loader="{ isActive }">
-  <v-progress-linear
-    :active="isActive"
-    color="deep-purple"
-    height="4"
-    indeterminate
-  ></v-progress-linear>
-</template>
+  <v-card class="my-12 card-item" max-width="250" height="250">
+    <template v-slot:loader="{ isActive }">
+      <v-progress-linear
+        :active="isActive"
+        color="deep-purple"
+        height="4"
+        indeterminate
+      ></v-progress-linear>
+    </template>
+ 
+      <v-img src="/procesador.jpg" height="200"/>
 
-<v-img
-  src="/i9.jpg"
-  class="object-fit-contain"
-  style="max-width: 100%; max-height: 100%;"
-></v-img>
+ 
+    <v-divider :thickness="5" ></v-divider>
 
-<v-card-title
-  class="text-center title-background"
->Procesadores</v-card-title>
-</v-card>
-    
+    <v-card-title class="text-center title-background">
+      Tarjeta Gráfica
+    </v-card-title>
+
+  </v-card>
  </router-link>
 
   </div>
